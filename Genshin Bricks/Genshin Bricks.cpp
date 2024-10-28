@@ -1,6 +1,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
+#include <SFML/Window/Mouse.hpp>
 
 int main()
 {
@@ -21,12 +22,17 @@ int main()
     sf::Color Geo(253, 178, 12, 255);
     sf::Color Pyro(239, 121, 56, 255);
     float ballSize(10);
-    sf::CircleShape shape(ballSize);
+    float paddleSize(100);
+    sf::CircleShape Ball(ballSize);
+    sf::RectangleShape Paddle(sf::Vector2f(paddleSize, 30));
+    sf::Vector2i mousePosition = sf::Mouse::getPosition();
     Vector2 ballPos(300, 400);
     Vector2 speed(0.1f, 0.1f);
 
-    shape.setFillColor(Anemo);
-    shape.setPosition(ballPos.x, ballPos.y);
+    Ball.setFillColor(Anemo);
+    Paddle.setFillColor(Geo);
+    Ball.setPosition(ballPos.x, ballPos.y);
+    Paddle.setPosition(0, 750);
 
     while (window.isOpen())
     {
@@ -38,7 +44,8 @@ int main()
         }
 
         window.clear();
-        window.draw(shape);
+        window.draw(Ball);
+        window.draw(Paddle);
         window.display();
         
         
@@ -46,7 +53,15 @@ int main()
         ballPos.y += speed.y;
         if ((ballPos.x >= (screenSize.x - (ballSize*2))) || (ballPos.x <= 0)) speed.x *= -1.0f;
         if ((ballPos.y >= (screenSize.y - (ballSize*2))) || (ballPos.y <= 0)) speed.y *= -1.0f;
-        shape.move(speed.x, speed.y);
+        Ball.move(speed.x, speed.y);
+        mousePosition = sf::Mouse::getPosition(window);
+        if (mousePosition.x >= (screenSize.x - (paddleSize / 2))) mousePosition.x = (screenSize.x - (paddleSize / 2));
+        if (mousePosition.x <= (paddleSize / 2)) mousePosition.x = (paddleSize / 2);
+        Paddle.setPosition(mousePosition.x - (paddleSize / 2), 750);
+
+        
+
+        std::cout << "current mouse position is : " << mousePosition.x << std::endl;
 
         
     }

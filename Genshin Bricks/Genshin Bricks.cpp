@@ -5,8 +5,7 @@
 int main()
 {
 
-    sf::ContextSettings settings;
-    settings.antialiasingLevel = 8;
+    Initialisation();
     Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.m_x, screenSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
 

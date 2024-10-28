@@ -159,11 +159,13 @@
   <ItemGroup>
     <ClCompile Include="Decla_ball.cpp" />
     <ClCompile Include="Decla_block.cpp" />
+    <ClCompile Include="Decla_Screen.cpp" />
     <ClCompile Include="Genshin Bricks.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Decla_ball.h" />
     <ClInclude Include="Decla_block.h" />
+    <ClInclude Include="Decla_Screen.h" />
     <ClInclude Include="Fct_Gen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

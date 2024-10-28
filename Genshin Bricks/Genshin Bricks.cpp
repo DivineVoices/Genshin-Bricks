@@ -6,7 +6,7 @@ int main()
 {
 
     Initialisation();
-    Vector2 screenSize(600, 800);
+    //Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.m_x, screenSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
 
     float ballSize(10);

@@ -5,11 +5,6 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-void Initialisation() {
-	sf::ContextSettings settings;
-	settings.antialiasingLevel = 8;
-}
-
 //Définitions des couleurs
 sf::Color White(255, 255, 255, 255);
 sf::Color Anemo(116, 194, 168, 255);

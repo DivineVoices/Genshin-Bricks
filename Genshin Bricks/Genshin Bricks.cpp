@@ -9,15 +9,10 @@ int main()
         float x, y;
         Vector2(float _x = 0, float _y = 0) : x(_x), y(_y) {}
     };
-
-
-
-    
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
     Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), "Genshin Bricks", sf::Style::Default, settings);
-
     sf::Color Anemo(116, 194, 168, 255);
     sf::Color Geo(253, 178, 12, 255);
     sf::Color Pyro(239, 121, 56, 255);
@@ -28,7 +23,6 @@ int main()
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
     Vector2 ballPos(300, 400);
     Vector2 speed(0.1f, 0.1f);
-
     Ball.setFillColor(Anemo);
     Paddle.setFillColor(Geo);
     Ball.setPosition(ballPos.x, ballPos.y);
@@ -48,7 +42,6 @@ int main()
         window.draw(Paddle);
         window.display();
         
-        
         ballPos.x += speed.x;
         ballPos.y += speed.y;
         if ((ballPos.x >= (screenSize.x - (ballSize*2))) || (ballPos.x <= 0)) speed.x *= -1.0f;
@@ -58,13 +51,14 @@ int main()
         if (mousePosition.x >= (screenSize.x - (paddleSize / 2))) mousePosition.x = (screenSize.x - (paddleSize / 2));
         if (mousePosition.x <= (paddleSize / 2)) mousePosition.x = (paddleSize / 2);
         Paddle.setPosition(mousePosition.x - (paddleSize / 2), 750);
+        sf::FloatRect paddleBox = Paddle.getGlobalBounds();
+        sf::FloatRect ballBox = Ball.getGlobalBounds();
 
-        
-
-        std::cout << "current mouse position is : " << mousePosition.x << std::endl;
-
-        
+        if (paddleBox.intersects(ballBox))
+        {
+            speed.y *= -1.0f;
+            Ball.setFillColor(Pyro);
+        }
     }
-
     return 0;
 }

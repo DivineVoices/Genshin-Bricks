@@ -1,6 +1,8 @@
-﻿  Genshin Bricks.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+﻿  Decla_ball.cpp
+  Genshin Bricks.cpp
+C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(13,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(13,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+  Génération de code en cours...
   Genshin Bricks.vcxproj -> C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.

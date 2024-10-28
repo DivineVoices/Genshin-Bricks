@@ -11,4 +11,6 @@ public:
 	//Gets
 	Vector2 GetSize();
 
+	//Fonctions
+	void Demarrage();
 };

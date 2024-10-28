@@ -5,9 +5,10 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
-void Initialisation() {
+sf::ContextSettings Initialisation() {
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
+	return settings;
 }
 
 //Définitions des couleurs

@@ -1,13 +1,12 @@
 #include "Fct_Gen.h"
 #include "Decla_ball.h"
 #include "Decla_block.h"
+#include "Decla_Screen.h"
 
 int main()
 {
 
-    Initialisation();
-    //Vector2 screenSize(600, 800);
-    sf::RenderWindow window(sf::VideoMode(screenSize.m_x, screenSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
+    Demarrage();
 
     float ballSize(10);
     sf::CircleShape shape(ballSize);

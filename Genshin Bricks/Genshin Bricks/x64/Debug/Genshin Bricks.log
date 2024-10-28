@@ -1,0 +1,4 @@
+﻿  Genshin Bricks.cpp
+C:\Users\dpereme\source\repos\Genshin Bricks\Genshin Bricks.cpp(18,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\dpereme\source\repos\Genshin Bricks\Genshin Bricks.cpp(18,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+  Genshin Bricks.vcxproj -> C:\Users\dpereme\source\repos\Genshin Bricks\x64\Debug\Genshin Bricks.exe

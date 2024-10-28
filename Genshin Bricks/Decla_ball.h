@@ -7,6 +7,7 @@ class Ball {
 	Vector2 m_direction;
 	float m_vitesse;
 	int m_degats;
+	sf::Color white(255, 255, 255, 255);
 
 public:
 	//Constructeur

@@ -2,6 +2,10 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <SFML/Graphics.hpp>
+#include <SFML/Window.hpp>
+
+sf::ContextSettings settings;
 
 struct Vector2 {
 	float m_x, m_y;

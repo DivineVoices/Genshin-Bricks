@@ -1,12 +1,10 @@
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
+#include "Fct_Gen.h"
 #include "Decla_ball.h"
 #include "Decla_block.h"
 
 int main()
 {
-    
+
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
     Vector2 screenSize(600, 800);

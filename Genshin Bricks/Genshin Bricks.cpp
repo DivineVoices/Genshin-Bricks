@@ -10,9 +10,6 @@ int main()
     Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.m_x, screenSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
 
-    sf::Color Anemo(116, 194, 168, 255);
-    sf::Color Geo(253, 178, 12, 255);
-    sf::Color Pyro(239, 121, 56, 255);
     float ballSize(10);
     sf::CircleShape shape(ballSize);
     Vector2 ballPos(300, 400);

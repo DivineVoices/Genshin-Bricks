@@ -1,5 +1,14 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\ttaaddi\source\repos\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ttaaddi\source\repos\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  LINK : C:\Users\ttaaddi\Source\Repos\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe introuvable ou non généré par la dernière édition de liens incrémentielle ; édition de liens complète en cours
-  Genshin Bricks.vcxproj -> C:\Users\ttaaddi\Source\Repos\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(16,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(16,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(61,99): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(62,80): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  Genshin Bricks.vcxproj -> C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe

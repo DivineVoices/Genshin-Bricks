@@ -8,8 +8,6 @@ public:
 	//Constructeur
 	Screen(Vector2 size = Vector2(600, 800)) : m_size(size) {};
 
-	void Initialisation();
-
 	//Gets
 	Vector2 GetSize();
 

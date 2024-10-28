@@ -52,10 +52,9 @@
               "RelativeDocumentMoniker": "Fct_Gen.h",
               "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Fct_Gen.h",
               "RelativeToolTip": "Fct_Gen.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T11:02:15.864Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T11:02:15.864Z"
             },
             {
               "$type": "Document",
@@ -113,7 +112,7 @@
               "RelativeDocumentMoniker": "Decla_Screen.h",
               "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Screen.h",
               "RelativeToolTip": "Decla_Screen.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-28T11:42:52.209Z",
               "EditorCaption": ""
@@ -126,10 +125,9 @@
               "RelativeDocumentMoniker": "Decla_Screen.cpp",
               "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Screen.cpp",
               "RelativeToolTip": "Decla_Screen.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T11:43:31.513Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T11:43:31.513Z"
             },
             {
               "$type": "Document",
@@ -141,8 +139,7 @@
               "RelativeToolTip": "Genshin Bricks.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T07:16:55.428Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T07:16:55.428Z"
             }
           ]
         }

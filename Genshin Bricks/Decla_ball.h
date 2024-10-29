@@ -7,7 +7,7 @@ class Ball {
 	Vector2 m_direction;
 	float m_vitesse;
 	int m_degats;
-
+	
 public:
 	//Constructeur
 	Ball(float taille, Vector2 position, Vector2 direction, float vitesse, int degats) : m_taille(taille), m_position(position), m_direction(direction), m_vitesse(vitesse), m_degats(degats) {};
@@ -18,6 +18,7 @@ public:
 	float GetVit();
 
 	//Fcts
+	void CreaBall();
 };
 
 class Pyro_Ball : public Ball {

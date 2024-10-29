@@ -9,3 +9,10 @@ Vector2 Ball::GetDir() {
 float Ball::GetVit() {
 	return m_vitesse;
 }
+
+void Ball::CreaBall() {
+	sf::Color Anemo(116, 194, 168, 255);
+	sf::CircleShape Balle(m_taille);
+	Balle.setFillColor(Anemo);
+	Balle.setPosition(m_position.m_x, m_position.m_x);
+}

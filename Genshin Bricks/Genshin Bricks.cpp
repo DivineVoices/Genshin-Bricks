@@ -5,23 +5,17 @@
 
 int main()
 {
+    void Demarrage();
 
-    Demarrage();
-
-    float ballSize(10);
-    sf::CircleShape shape(ballSize);
-    Vector2 ballPos(300, 400);
-    Vector2 speed(0.1f, 0.1f);
-
-    shape.setFillColor(Anemo);
-    shape.setPosition(ballPos.m_x, ballPos.m_y);
+    Ball balle(10, (300, 400), (1, 1), 2, 1);
+    balle.CreaBall();
 
     while (window.isOpen())
     {
         sf::Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == sf::Event::Closed){
                 window.close();
         }
 
@@ -37,7 +31,7 @@ int main()
         shape.move(speed.m_x, speed.m_y);
 
         
-    }
+    }*/
 
     return 0;
 }

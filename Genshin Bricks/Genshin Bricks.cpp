@@ -6,6 +6,8 @@
 int main()
 {
     void Demarrage();
+    size = GetSize();
+    sf::RenderWindow window(sf::VideoMode(.m_x, m_size.m_y), "Genshin Bricks", sf::Style::Default, settings);
 
     Ball balle(10, (300, 400), (1, 1), 2, 1);
     balle.CreaBall();

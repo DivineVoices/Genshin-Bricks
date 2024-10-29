@@ -3,7 +3,7 @@
 
 class Screen {
 	Vector2 m_size;
-	sf::RenderWindow m_window;
+	sf::RenderWindow* m_window;
 
 public:
 	//Constructeur

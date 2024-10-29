@@ -5,9 +5,13 @@
 
 int main()
 {
-    void Demarrage();
-    size = GetSize();
-    sf::RenderWindow window(sf::VideoMode(.m_x, m_size.m_y), "Genshin Bricks", sf::Style::Default, settings);
+    Screen Window;
+    sf::ContextSettings settings = Window.Demarrage();
+    Vector2 size = Window.GetSize();
+    
+    sf::RenderWindow window(sf::VideoMode(size.m_x, size.m_y), "Genshin Bricks", sf::Style::Default, settings);
+
+    Vector2 size = GetSize();
 
     Ball balle(10, (300, 400), (1, 1), 2, 1);
     balle.CreaBall();

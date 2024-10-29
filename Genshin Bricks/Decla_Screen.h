@@ -3,7 +3,6 @@
 
 class Screen {
 	Vector2 m_size;
-	sf::RenderWindow* m_window;
 
 public:
 	//Constructeur
@@ -13,5 +12,5 @@ public:
 	Vector2 GetSize();
 
 	//Fonctions
-	void Demarrage();
+	sf::ContextSettings Demarrage();
 };

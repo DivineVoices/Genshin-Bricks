@@ -116,7 +116,7 @@ int main()
             gameState = GameOver;
         }
 
-        if (Ball.getPosition().y >= 760) {
+        if (Ball.getPosition().y >= 770) {
             lives -= 1;
             std::cout << lives << std::endl;
             ballState = Reposition;

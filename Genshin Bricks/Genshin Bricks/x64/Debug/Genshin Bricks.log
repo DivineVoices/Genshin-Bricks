@@ -1,14 +1,6 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(56,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(56,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(128,99): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(129,80): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-          with
-          [
-              T=int
-          ]
-  Genshin Bricks.vcxproj -> C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(85,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(85,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(135,24): error C2374: 'Paddle' : redéfinition ; initialisation multiple
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(115,24): message : voir la déclaration de 'Paddle'
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(245,29): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données

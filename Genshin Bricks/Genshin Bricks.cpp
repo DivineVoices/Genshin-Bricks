@@ -16,48 +16,79 @@ class Brick
 {
 public:
     Vector2 position;
-    string Element;
+    sf::Color Element;
     bool is_visible;
     sf::FloatRect brickBox;
-    sf::Texture texture;
     sf::Sprite sprite;
+
+    static sf::Texture anemoTexture;
+    static sf::Texture electroTexture;
+    static sf::Texture pyroTexture;
 
     Brick() : is_visible(true) {}
 
-    void init(string element, Vector2 position, Vector2 size)
-    {
+    static void loadTextures() {
+        if (!anemoTexture.loadFromFile("anemo.png")) {
+            cerr << "Erreur de chargement de la texture anemo.png" << endl;
+        }
+        if (!electroTexture.loadFromFile("electro.png")) {
+            cerr << "Erreur de chargement de la texture electro.png" << endl;
+        }
+        if (!pyroTexture.loadFromFile("pyro.png")) {
+            cerr << "Erreur de chargement de la texture pyro.png" << endl;
+        }
+    }
+
+    void init(sf::Color element, Vector2 position, Vector2 size) {
         this->position = position;
         this->Element = element;
         is_visible = true;
 
-        if (Element == "Pyro") {
-            texture.loadFromFile("pyro.png");
+        // Appliquer la bonne texture selon l'élément
+        if (Element == sf::Color(239, 121, 56, 255)) {  // Pyro
+            sprite.setTexture(pyroTexture);
         }
-        else if (Element == "Anemo") {
-            texture.loadFromFile("anemo.png");
+        else if (Element == sf::Color(116, 194, 168, 255)) {  // Anemo
+            sprite.setTexture(anemoTexture);
         }
-        else if (Element == "Electro") {
-            texture.loadFromFile("electro.png");
+        else if (Element == sf::Color(167, 86, 204, 255)) {  // Electro
+            sprite.setTexture(electroTexture);
         }
 
-        sprite.setTexture(texture);
         sprite.setPosition(position.x, position.y);
-        sprite.setScale(size.x / texture.getSize().x, size.y / texture.getSize().y); // Mise à l'échelle
-        brickBox = sprite.getGlobalBounds();  // Mettre à jour le rectangle de collision
+        sprite.setScale(size.x / sprite.getTexture()->getSize().x, size.y / sprite.getTexture()->getSize().y);
+        brickBox = sprite.getGlobalBounds();
     }
 };
+
+// Initialisation des textures statiques
+sf::Texture Brick::anemoTexture;
+sf::Texture Brick::electroTexture;
+sf::Texture Brick::pyroTexture;
+
+
+int getBrickIndex(int row, int col, int rows, int cols) {
+    if (row < 0 || row >= rows || col < 0 || col >= cols) return -1; // Hors limites
+    return row * cols + col;
+}
+
 
 int main()
 {
     sf::ContextSettings settings;
     settings.antialiasingLevel = 8;
 
+    // Charger les textures pour les briques
+    Brick::loadTextures();
+
     Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), "Genshin Bricks", sf::Style::Default, settings);
 
     sf::Color Anemo(116, 194, 168, 255);
-    sf::Color Geo(253, 178, 12, 255);
+    sf::Color Electro(167, 86, 204, 255);
     sf::Color Pyro(239, 121, 56, 255);
+    sf::Color eleStorage[] = { Anemo, Electro, Pyro };
+    
 
     float brickWidth = 60.0f;
     float brickHeight = 30.0f;
@@ -67,45 +98,68 @@ int main()
     int rows = 5;   // Nombre de lignes
     int cols = 8;   // Nombre de colonnes
 
-    // Créer les briques en grille
+    // Création des briques en grille
     for (int row = 0; row < rows; ++row) {
         for (int col = 0; col < cols; ++col) {
             Vector2 position((brickWidth + padding) * col, (brickHeight + padding) * row);
             Brick brick;
-            string element = (row % 2 == 0) ? "Anemo" : "Pyro";  // Alterner les éléments pour l'exemple
+            sf::Color element = (row % 2 == 0) ? Electro : Anemo;
             brick.init(element, position, Vector2(brickWidth, brickHeight));
             bricks.push_back(brick);
         }
     }
-
+    
     float ballSize = 10.0f;
     float paddleSize = 100.0f;
     sf::CircleShape Ball(ballSize);
     sf::RectangleShape Paddle(sf::Vector2f(paddleSize, 30));
-    sf::Vector2i mousePosition = sf::Mouse::getPosition();
-
     Vector2 ballPos(300, 400);
     Vector2 speed(0.1f, 0.1f);
-
+    sf::Clock gameClock;
+    sf::Time electroDur;
+    sf::Time electroDuration;
+    bool electroSpeed = false;
+    bool electroSpeedEnhanced = false;
     Ball.setFillColor(Anemo);
-    Paddle.setFillColor(Geo);
+    Paddle.setFillColor(Electro);
     Ball.setPosition(ballPos.x, ballPos.y);
-    Paddle.setPosition(0, 750);
+    Paddle.setPosition(250, 750);  // Centrer la raquette
+    vector<string>textStorage = { "lynette.png", "raiden.png", "hutao.png" };
+    int eleSwitcher(0);
+    sf::Texture paddleTexture;
+    if (!paddleTexture.loadFromFile(textStorage[eleSwitcher])) {
+        cerr << "Erreur de chargement de la texture " << textStorage[eleSwitcher] << endl;
+        return -1; // Quitter si la texture ne se charge pas
+    }
 
+    sf::RectangleShape Paddle(sf::Vector2f(100.0f, 30.0f)); // Créer une raquette de taille 100x30
+    Paddle.setTexture(&paddleTexture);
     while (window.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
-        {
+        while (window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (event.type == sf::Event::MouseButtonPressed) {
+                if (event.mouseButton.button == sf::Mouse::Left) {
+                    eleSwitcher = (eleSwitcher + 1) % textStorage.size(); // Passer à la texture suivante
+                    if (!paddleTexture.loadFromFile(textStorage[eleSwitcher])) {
+                        cerr << "Erreur de chargement de la texture " << textStorage[eleSwitcher] << endl;
+                    }
+                    else {
+                        Paddle.setTexture(&paddleTexture); // Assigner la nouvelle texture
+                        cout << "Texture changée vers " << textStorage[eleSwitcher] << endl;
+                    }
+                }
+            }
         }
 
         window.clear();
+
+        // Dessiner la balle, la raquette et les briques visibles
         window.draw(Ball);
         window.draw(Paddle);
 
-        // Dessiner toutes les briques visibles
         for (auto& brick : bricks) {
             if (brick.is_visible) {
                 window.draw(brick.sprite);
@@ -114,55 +168,93 @@ int main()
 
         window.display();
 
+        // Déplacement de la balle
         ballPos.x += speed.x;
         ballPos.y += speed.y;
+        Ball.setPosition(ballPos.x, ballPos.y);
 
         // Inverser la direction de la balle si elle touche les bords de l'écran
-        if ((ballPos.x >= (screenSize.x - (ballSize * 2))) || (ballPos.x <= 0)) speed.x *= -1.0f;
-        if ((ballPos.y >= (screenSize.y - (ballSize * 2))) || (ballPos.y <= 0)) speed.y *= -1.0f;
+        if ((ballPos.x >= (screenSize.x - ballSize * 2)) || (ballPos.x <= 0)) speed.x *= -1.0f;
+        if ((ballPos.y <= 0)) speed.y *= -1.0f;  // Ne rebondit que sur le haut pour game over en bas
 
-        Ball.move(speed.x, speed.y);
+        // Déplacer la raquette en fonction de la souris
+        sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+        float newPaddlePosX = mousePosition.x - paddleSize / 2;
+        newPaddlePosX = max(0.f, min(newPaddlePosX, screenSize.x - paddleSize));
+        Paddle.setPosition(newPaddlePosX, 750);
 
-        // Déplacer la raquette en fonction de la position de la souris
-        mousePosition = sf::Mouse::getPosition(window);
-        if (mousePosition.x >= (screenSize.x - (paddleSize / 2))) mousePosition.x = (screenSize.x - (paddleSize / 2));
-        if (mousePosition.x <= (paddleSize / 2)) mousePosition.x = (paddleSize / 2);
-        Paddle.setPosition(mousePosition.x - (paddleSize / 2), 750);
-
+        // Gérer les collisions balle-raquette
         sf::FloatRect paddleBox = Paddle.getGlobalBounds();
         sf::FloatRect ballBox = Ball.getGlobalBounds();
+        if (electroSpeed) {
+            // Check how much time has passed since electroSpeed was activated
+            electroDuration = gameClock.getElapsedTime();
 
-        // Collision entre la balle et la raquette
+            // Check if the duration has exceeded 3 seconds
+            if (electroDuration.asSeconds() >= 3) {
+                if (electroSpeedEnhanced == 1) {
+                    electroSpeed = false; // Reset the speed flag
+                    speed.x /= 1.5f;      // Reset speed to normal
+                    speed.y /= 1.5f;      // Reset speed to normal
+                }
+                else {
+                    electroSpeed = false; // Reset the speed flag
+                    speed.x /= 1.25f;      // Reset speed to normal
+                    speed.y /= 1.25f;
+                }
+            }
+        }
         if (paddleBox.intersects(ballBox))
         {
             speed.y *= -1.0f;
-            Ball.setFillColor(Pyro);
+            Ball.setFillColor(Paddle.getFillColor());
         }
 
-        // Collision entre la balle et les briques
-        for (auto& brick : bricks) {
+        // Gérer les collisions balle-briques
+        for (size_t i = 0; i < bricks.size(); ++i) {
+            Brick& brick = bricks[i];
             if (brick.is_visible && ballBox.intersects(brick.brickBox)) {
-                float overlapLeft = ballBox.left + ballBox.width - brick.brickBox.left;
-                float overlapRight = brick.brickBox.left + brick.brickBox.width - ballBox.left;
-                float overlapTop = ballBox.top + ballBox.height - brick.brickBox.top;
-                float overlapBottom = brick.brickBox.top + brick.brickBox.height - ballBox.top;
-
-                bool collisionFromLeft = (overlapLeft < overlapRight) && (overlapLeft < overlapTop) && (overlapLeft < overlapBottom);
-                bool collisionFromRight = (overlapRight < overlapLeft) && (overlapRight < overlapTop) && (overlapRight < overlapBottom);
-                bool collisionFromTop = (overlapTop < overlapBottom) && (overlapTop < overlapLeft) && (overlapTop < overlapRight);
-                bool collisionFromBottom = (overlapBottom < overlapTop) && (overlapBottom < overlapLeft) && (overlapBottom < overlapRight);
-
-                if (collisionFromLeft || collisionFromRight)
+                speed.y *= -1.0f;
+                if (brick.Element == Electro)
                 {
-                    speed.x *= -1.0f;
-                }
-                if (collisionFromTop || collisionFromBottom)
-                {
-                    speed.y *= -1.0f;
+                    if (electroSpeed == false) {
+                        if (Ball.getFillColor() == Anemo)
+                        {
+                            electroSpeedEnhanced = true;
+                            electroSpeed = true; // Activate electro speed
+                            speed.x *= 2.0f;     // Double the speed
+                            speed.y *= 2.0f;     // Double the speed
+                            gameClock.restart();  // Restart the game clock to track this effect duration
+                        }
+                        else
+                        {
+                            electroSpeedEnhanced = false;
+                            electroSpeed = true; // Activate electro speed
+                            speed.x *= 1.5f;     // Double the speed
+                            speed.y *= 1.5f;     // Double the speed
+                            gameClock.restart();
+                        }
+                    }
                 }
 
-                brick.is_visible = false;
-                break;
+                if ((brick.Element == Electro && Ball.getFillColor() == Pyro) ||
+                    (brick.Element == Pyro && Ball.getFillColor() == Electro)) {
+
+                    // Rendre invisible la brique touchée et les briques adjacentes
+                    brick.is_visible = false;
+                    int row = i / cols;
+                    int col = i % cols;
+
+                    // Indices pour les briques adjacentes (haut, gauche, droite)
+                    int topIndex = getBrickIndex(row - 1, col, rows, cols);
+
+                    // Casser les briques adjacentes si elles existent
+                    if (topIndex != -1 && bricks[topIndex].is_visible) bricks[topIndex].is_visible = false;
+                } // Stop checking further bricks after collision
+                else {
+                    brick.is_visible = false;
+                }
+                break;  // Ne vérifier qu'une seule collision par frame
             }
         }
     }

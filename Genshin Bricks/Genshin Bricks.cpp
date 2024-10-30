@@ -25,6 +25,8 @@ int main()
     Vector2 paddleSize(100, 30);
     Vector2 brickSize(80, 40);
     int eleSwitcher(0);
+    int lives(3);
+    bool ballVisible = true;
     sf::CircleShape Ball(ballSize);
     sf::RectangleShape Paddle(sf::Vector2f(paddleSize.x, paddleSize.y));
     sf::RectangleShape Brick(sf::Vector2f(brickSize.x, brickSize.y));
@@ -41,6 +43,18 @@ int main()
     Ball.setPosition(ballPos.x, ballPos.y);
     Paddle.setPosition(0, 750);
     window.setKeyRepeatEnabled(false);
+
+    enum State
+    {
+        Flying,
+        Reposition,
+        Running,
+        GameOver,
+    };
+
+    State gameState = Running;
+
+    State ballState = Flying;
 
     while (window.isOpen())
     {
@@ -61,7 +75,32 @@ int main()
                     Paddle.setFillColor(eleStorage[eleSwitcher]);
                 }
             }
+            if (event.type == sf::Event::MouseButtonPressed)
+            {
+                if (event.mouseButton.button == sf::Mouse::Right)
+                {
+                    std::cout << "Ball should be flying";
+                    ballState = Flying;
+                }
+            }
         }
+
+
+        switch (ballState)
+        {
+            case Flying: 
+                ballPos.x += speed.x;
+                ballPos.y += speed.y;
+
+                if ((Ball.getPosition().x >= (screenSize.x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) speed.x *= -1.0f;
+                if ((Ball.getPosition().y >= (screenSize.y - (ballSize * 2))) || (Ball.getPosition().y <= 0)) speed.y *= -1.0f;
+                Ball.move(speed.x, speed.y);
+                break;
+            case Reposition:
+                Ball.setPosition(mousePosition.x - ballSize, 730);
+                break;
+        }
+
 
         // Update game logic
         window.clear();
@@ -72,13 +111,16 @@ int main()
         }
         window.display();
 
-        ballPos.x += speed.x;
-        ballPos.y += speed.y;
+        if (lives <= 0) 
+        {  
+            gameState = GameOver;
+        }
 
-        if ((ballPos.x >= (screenSize.x - (ballSize * 2))) || (ballPos.x <= 0)) speed.x *= -1.0f;
-        if ((ballPos.y >= (screenSize.y - (ballSize * 2))) || (ballPos.y <= 0)) speed.y *= -1.0f;
-
-        Ball.move(speed.x, speed.y);
+        if (Ball.getPosition().y >= 760) {
+            lives -= 1;
+            std::cout << lives << std::endl;
+            ballState = Reposition;
+        }
         mousePosition = sf::Mouse::getPosition(window);
 
         if (mousePosition.x >= (screenSize.x - (paddleSize.x / 2))) mousePosition.x = (screenSize.x - (paddleSize.x / 2));

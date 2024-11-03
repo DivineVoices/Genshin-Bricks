@@ -168,6 +168,9 @@
     <ClInclude Include="Decla_Screen.h" />
     <ClInclude Include="Fct_Gen.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="zh-cn.ttf" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

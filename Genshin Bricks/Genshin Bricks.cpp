@@ -12,13 +12,14 @@ int main()
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
     //A partir de là, c'est bon
 
-
+    /*
     sf::Font font;
     // Load the font file; replace "path/to/font.ttf" with the actual path to your font file.
     if (!font.loadFromFile("zh-cn.ttf")) {
         std::cerr << "Error loading font\n";
         return -1;
     }
+    */
 
     int ballSize(10);
 

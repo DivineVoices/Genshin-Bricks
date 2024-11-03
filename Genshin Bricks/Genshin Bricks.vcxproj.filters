@@ -42,4 +42,9 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="zh-cn.ttf">
+      <Filter>Fichiers sources</Filter>
+    </Font>
+  </ItemGroup>
 </Project>

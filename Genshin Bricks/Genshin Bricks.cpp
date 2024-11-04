@@ -3,9 +3,7 @@
 int main() 
 {
     //A ne pas toucher
-    Ball balle(10, (300, 400), Vector2(0.1f, 0.1f), 1);
-    Paddle paddle((100, 30), (0, 750), 3);
-    Game game(Screen Window(), balle, paddle);
+    Game game(Screen Window(), Ball balle, Paddle paddle);
 
     //Initialisation des objets
     balle.CreaBall();

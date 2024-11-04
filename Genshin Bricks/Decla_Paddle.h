@@ -10,7 +10,7 @@ class Paddle {
 
 public:
 	//Constructeur
-	Paddle(Vector2 taille, Vector2 position, int lives, Element element = Anemo) : m_size(taille), m_position(position), m_lives(lives), m_element(element) {};
+	Paddle(Vector2 taille = Vector2 (100,30), Vector2 position = (0,750), int lives = 3, Element element = Anemo) : m_size(taille), m_position(position), m_lives(lives), m_element(element) {};
 
 	//Gets
 	Vector2 GetSize();

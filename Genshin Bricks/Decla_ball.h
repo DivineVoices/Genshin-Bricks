@@ -12,7 +12,7 @@ class Ball {
 	
 public:
 	//Constructeur
-	Ball(float taille, Vector2 position, Vector2 vitesse, int degats, bool visible = true) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats), m_visible(visible) {};
+	Ball(float taille = 10, Vector2 position = Vector2(300,400), Vector2 vitesse = Vector2 (0.1f,0.1f), int degats = 1, bool visible = true) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats), m_visible(visible) {};
 
 	//Gets
 	float GetSize();

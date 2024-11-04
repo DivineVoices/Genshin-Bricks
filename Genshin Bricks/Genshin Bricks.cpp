@@ -36,8 +36,8 @@ int main()
     sf::Time electroDur;
 
     Vector2 brickSize(80, 40);
-    int eleSwitcher(0);
     sf::RectangleShape Brick(sf::Vector2f(brickSize.m_x, brickSize.m_y));
+
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
     Vector2 speed(0.1f, 0.1f);
     sf::Time electroDuration;

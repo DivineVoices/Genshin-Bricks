@@ -11,19 +11,17 @@ int main()
     sf::ContextSettings settings = Window.Demarrage();
     Vector2 windowSize = Window.GetSize(); 
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
-    //A partir de là, c'est bon
-
-    
     sf::Font font = FontInit();
-    // Load the font file; replace "path/to/font.ttf" with the actual path to your font file.
 
-    //Création de balles
+    //Création des objets
     Ball balle(10, (300, 400), Vector2(0.1f, 0.1f), 1);
+    Paddle paddle((100, 30), (0, 750), 3);
 
-
-    //Initialisation de Ball
+    //Initialisation des objets
     balle.CreaBall();
+    paddle.CreaPad();
 
+    //Init couleurs
     sf::Color Anemo(116, 194, 168, 255);
     sf::Color Electro(167, 86, 204, 255);
     sf::Color Pyro(239, 121, 56, 255);
@@ -41,19 +39,14 @@ int main()
     };
 
     State gameState = Running;
-
     State ballState = Flying;
 
+    //Init Clock
     sf::Clock gameClock;
     sf::Time electroDur;
 
-    Paddle paddle((100, 30),3);
-
     Vector2 brickSize(80, 40);
     int eleSwitcher(0);
-    int lives(3);
-    bool ballVisible = true;
-    sf::RectangleShape Paddle(sf::Vector2f(paddle.GetSize().m_x, paddle.GetSize().m_y));
     sf::RectangleShape Brick(sf::Vector2f(brickSize.m_x, brickSize.m_y));
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
     Vector2 speed(0.1f, 0.1f);
@@ -62,19 +55,17 @@ int main()
     bool brickVisible = true;
     bool electroSpeedEnhanced = false;
     bool winCon = false;
-    Paddle.setFillColor(White);
     Brick.setFillColor(Electro);
-    Paddle.setPosition(0, 750);
     window.setKeyRepeatEnabled(false);
     sf::Text text;
-
 
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
         sf::CircleShape forballebox = balle.GetForm();
+        sf::RectangleShape forpaddlebox = paddle.GetForm();
 
-        sf::FloatRect paddleBox = Paddle.getGlobalBounds();
+        sf::FloatRect paddleBox = forpaddlebox.getGlobalBounds();
         sf::FloatRect ballBox = forballebox.getGlobalBounds();
         sf::FloatRect brickBox = Brick.getGlobalBounds();
         sf::Event event;
@@ -184,7 +175,7 @@ int main()
             window.display();
 
 
-            if (lives <= 0)
+            if (paddle.GetLife() <= 0)
             {
                 gameState = GameOver;
             }

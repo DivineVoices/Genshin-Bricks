@@ -8,16 +8,18 @@ class Ball {
 	Vector2 m_vitesse;
 	int m_degats;
 	sf::CircleShape m_forme;
+	bool m_visible;
 	
 public:
 	//Constructeur
-	Ball(float taille, Vector2 position, Vector2 vitesse, int degats) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats) {};
+	Ball(float taille, Vector2 position, Vector2 vitesse, int degats, bool visible = true) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats), m_visible(visible) {};
 
 	//Gets
 	float GetSize();
 	Vector2 GetPos();
 	Vector2 GetVit();
 	sf::CircleShape GetForm();
+	bool GetVis();
 
 	//Fcts
 	void CreaBall();

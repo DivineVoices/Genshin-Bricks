@@ -35,3 +35,9 @@ sf::Font FontInit(){
 		return font;
 	}
 }
+
+enum Element {
+	Anemo,
+	Electro,
+	Pyro,
+};

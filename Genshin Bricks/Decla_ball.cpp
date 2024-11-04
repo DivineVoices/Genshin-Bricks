@@ -12,6 +12,9 @@ Vector2 Ball::GetVit() {
 sf::CircleShape Ball::GetForm() {
 	return m_forme;
 }
+bool Ball::GetVis() {
+	return m_visible;
+}
 
 void Ball::CreaBall() {
 	sf::Color White(255, 255, 255, 255);

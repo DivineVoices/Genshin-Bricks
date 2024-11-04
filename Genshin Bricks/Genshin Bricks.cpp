@@ -2,6 +2,7 @@
 #include "Decla_ball.h"
 #include "Decla_block.h"
 #include "Decla_Screen.h"
+#include "Decla_Paddle.h"
 
 int main() 
 {
@@ -13,18 +14,11 @@ int main()
     //A partir de là, c'est bon
 
     
-    sf::Font font;
+    sf::Font font = FontInit();
     // Load the font file; replace "path/to/font.ttf" with the actual path to your font file.
-    if (!font.loadFromFile("zh-cn.ttf")) {
-        std::cerr << "Error loading font\n";
-        return -1;
-    }
-
-
-    int ballSize(10);
 
     //Création de balles
-    Ball balle(ballSize, (300, 400), Vector2(0.1f, 0.1f), 1);
+    Ball balle(10, (300, 400), Vector2(0.1f, 0.1f), 1);
 
 
     //Initialisation de Ball
@@ -33,6 +27,7 @@ int main()
     sf::Color Anemo(116, 194, 168, 255);
     sf::Color Electro(167, 86, 204, 255);
     sf::Color Pyro(239, 121, 56, 255);
+    sf::Color White(255, 255, 255, 255);
     sf::Color eleStorage[] = { Anemo, Electro, Pyro };
 
     //Pour les switch statement, Flying/Reposition = ballState, Running/GameWin/GameOver = gameState
@@ -51,26 +46,24 @@ int main()
 
     sf::Clock gameClock;
     sf::Time electroDur;
-    Vector2 paddleSize(100, 30);
+
+    Paddle paddle((100, 30),3);
+
     Vector2 brickSize(80, 40);
     int eleSwitcher(0);
     int lives(3);
     bool ballVisible = true;
-    sf::CircleShape Ball(10);
-    sf::RectangleShape Paddle(sf::Vector2f(paddleSize.m_x, paddleSize.m_y));
+    sf::RectangleShape Paddle(sf::Vector2f(paddle.GetSize().m_x, paddle.GetSize().m_y));
     sf::RectangleShape Brick(sf::Vector2f(brickSize.m_x, brickSize.m_y));
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
-    Vector2 ballStartPos(300, 400);
     Vector2 speed(0.1f, 0.1f);
     sf::Time electroDuration;
     bool electroSpeed = false;
     bool brickVisible = true;
     bool electroSpeedEnhanced = false;
     bool winCon = false;
-    Ball.setFillColor(Anemo);
-    Paddle.setFillColor(Anemo);
+    Paddle.setFillColor(White);
     Brick.setFillColor(Electro);
-    Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y);
     Paddle.setPosition(0, 750);
     window.setKeyRepeatEnabled(false);
     sf::Text text;
@@ -79,10 +72,13 @@ int main()
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
+        sf::CircleShape forballebox = balle.GetForm();
+
         sf::FloatRect paddleBox = Paddle.getGlobalBounds();
-        sf::FloatRect ballBox = Ball.getGlobalBounds();
+        sf::FloatRect ballBox = forballebox.getGlobalBounds();
         sf::FloatRect brickBox = Brick.getGlobalBounds();
         sf::Event event;
+
         while (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
@@ -166,16 +162,16 @@ int main()
             case Flying:
                 Ball.move(speed.m_x, speed.m_y);
 
-                if ((Ball.getPosition().x >= (windowSize.m_x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) {
+                if ((Ball.getPosition().x >= (windowSize.m_x - (balle.GetSize() * 2))) || (Ball.getPosition().x <= 0)) {
                     speed.m_x *= -1.0f; // Reverse x speed on wall collision
                 }
-                if ((Ball.getPosition().y >= (windowSize.m_y - (ballSize * 2))) || (Ball.getPosition().y <= 0)) {
+                if ((Ball.getPosition().y >= (windowSize.m_y - (balle.GetSize() * 2))) || (Ball.getPosition().y <= 0)) {
                     speed.m_y *= -1.0f; // Reverse y speed on wall collision
                 }
 
                 break;
             case Reposition:
-                Ball.setPosition(mousePosition.x - ballSize, 730);
+                Ball.setPosition(mousePosition.x - balle.GetSize(), 730);
                 break;
             }
 
@@ -229,9 +225,9 @@ int main()
             if (paddleBox.intersects(ballBox))
             {
                 // Calculate the ball's position to ensure it bounces correctly
-                if (Ball.getPosition().y + ballSize * 2 >= Paddle.getPosition().y) {
+                if (Ball.getPosition().y + balle.GetSize() * 2 >= Paddle.getPosition().y) {
                     // Move the ball just above the paddle to avoid hovering
-                    Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - ballSize * 2);
+                    Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - balle.GetSize() * 2);
                     speed.m_y *= -1.0f; // Reverse y-speed
                     sf::Color elementChange = Paddle.getFillColor();
                     Ball.setFillColor(elementChange);

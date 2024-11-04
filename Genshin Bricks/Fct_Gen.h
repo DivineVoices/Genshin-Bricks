@@ -25,3 +25,13 @@ struct Vector2 {
 		return Vector2(m_x * i, m_y * i);
 	}
 };
+
+sf::Font FontInit(){
+	sf::Font font;
+	if (!font.loadFromFile("zh-cn.ttf")) {
+		std::cerr << "Error loading font\n";
+	}
+	else {
+		return font;
+	}
+}

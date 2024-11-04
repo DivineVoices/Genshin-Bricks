@@ -1,6 +1,8 @@
 #include "Decla_ball.h"
 
-
+float Ball::GetSize() {
+	return m_taille;
+}
 Vector2 Ball::GetPos() {
 	return m_position;
 }

@@ -27,6 +27,9 @@
     <ClCompile Include="Decla_Screen.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="Decla_Paddle.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Decla_block.h">
@@ -39,6 +42,9 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="Decla_Screen.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="Decla_Paddle.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>

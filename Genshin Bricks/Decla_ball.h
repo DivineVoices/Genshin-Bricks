@@ -14,6 +14,7 @@ public:
 	Ball(float taille, Vector2 position, Vector2 vitesse, int degats) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats) {};
 
 	//Gets
+	float GetSize();
 	Vector2 GetPos();
 	Vector2 GetVit();
 	sf::CircleShape GetForm();
@@ -21,6 +22,7 @@ public:
 	//Fcts
 	void CreaBall();
 	void MoveBall(Screen window);
+	
 };
 
 class Pyro_Ball : public Ball {

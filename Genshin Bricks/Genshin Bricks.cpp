@@ -5,19 +5,12 @@ int main()
     //A ne pas toucher
     Game game(Screen Window(), Ball balle, Paddle paddle);
 
-    //Initialisation des objets
-    balle.CreaBall();
-    paddle.CreaPad();
-
     //Init couleurs
     sf::Color Anemo(116, 194, 168, 255);
     sf::Color Electro(167, 86, 204, 255);
     sf::Color Pyro(239, 121, 56, 255);
     sf::Color White(255, 255, 255, 255);
     sf::Color eleStorage[] = { Anemo, Electro, Pyro };
- 
-    State gameState = Running;
-    State ballState = Flying;
 
     //Init Clock
     sf::Clock gameClock;

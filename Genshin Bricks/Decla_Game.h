@@ -13,6 +13,7 @@
 //Game
 class Game {
 	Screen m_Window;
+	GameState m_gamestate = Starting;
 
 	//Constantes
 	Ball m_balle;

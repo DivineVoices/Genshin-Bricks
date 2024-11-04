@@ -42,10 +42,14 @@ enum Element {
 	Pyro,
 };
 
-enum State {
-	Flying,
-	Reposition,
+enum GameState {
+	Starting,
 	Running,
 	GameOver,
 	GameWin,
+};
+
+enum BallState {
+	Repositionning,
+	Flying,
 };

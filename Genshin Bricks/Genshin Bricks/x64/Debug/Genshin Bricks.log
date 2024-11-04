@@ -1,4 +1,12 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(18,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-  Genshin Bricks.vcxproj -> C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(85,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(85,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(104,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(105,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(107,9): error C2374: 'rows' : redéfinition ; initialisation multiple
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(104,9): message : voir la déclaration de 'rows'
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(108,9): error C2374: 'cols' : redéfinition ; initialisation multiple
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(105,9): message : voir la déclaration de 'cols'
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(150,24): error C2374: 'Paddle' : redéfinition ; initialisation multiple
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(132,24): message : voir la déclaration de 'Paddle'
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(263,29): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données

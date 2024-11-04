@@ -32,6 +32,12 @@ int main()
     if (!ElectroBrick.loadFromFile("Electro_Brick.wav")) {
         return -1;
     }
+
+    sf::SoundBuffer PyroBrick;
+    if (!PyroBrick.loadFromFile("Pyro_Brick.wav")) {
+        return -1;
+    }
+
     
     sf::SoundBuffer PaddleHit;
     if (!PaddleHit.loadFromFile("Paddle_Hit.wav")) {
@@ -98,7 +104,7 @@ int main()
     bool winCon = false;
     Ball.setFillColor(Anemo);
     Paddle.setFillColor(Anemo);
-    Brick.setFillColor(Electro);
+    Brick.setFillColor(Pyro);
     Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y);
     Paddle.setPosition(0, 750);
     window.setKeyRepeatEnabled(false);
@@ -332,6 +338,21 @@ int main()
                         BrickSound.play();
                     }
                     
+                }
+                if (Brick.getFillColor() == Pyro)
+                {
+                    if (Ball.getFillColor() == Electro)
+                    {
+                        BrickSound.setBuffer(PyroBrick);
+                        BrickSound.play();
+
+                    }
+                    else
+                    {
+                        BrickSound.setBuffer(PyroBrick);
+                        BrickSound.play();
+                    }
+
                 }
             }
             break;

@@ -1,19 +1,19 @@
 ﻿  Genshin Bricks.cpp
 C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(12,69): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(12,53): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(26,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(26,16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(150,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(175,111): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(175,111): warning C4244:         with
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(175,111): warning C4244:         [
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(175,111): warning C4244:             T=int
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(175,111): warning C4244:         ]
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(176,92): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(176,92): warning C4244:         with
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(176,92): warning C4244:         [
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(176,92): warning C4244:             T=int
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(176,92): warning C4244:         ]
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(29,30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(29,16): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(180,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(205,111): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(205,111): warning C4244:         with
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(205,111): warning C4244:         [
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(205,111): warning C4244:             T=int
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(205,111): warning C4244:         ]
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(206,92): warning C4244: '=': conversion from 'float' to 'T', possible loss of data
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(206,92): warning C4244:         with
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(206,92): warning C4244:         [
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(206,92): warning C4244:             T=int
+C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(206,92): warning C4244:         ]
   Genshin Bricks.vcxproj -> C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.

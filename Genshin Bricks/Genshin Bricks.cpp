@@ -12,14 +12,16 @@ int main()
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
     //A partir de là, c'est bon
 
-    /*
+    
     sf::Font font;
+    /*
     // Load the font file; replace "path/to/font.ttf" with the actual path to your font file.
     if (!font.loadFromFile("zh-cn.ttf")) {
         std::cerr << "Error loading font\n";
         return -1;
     }
     */
+
 
     int ballSize(10);
 
@@ -35,6 +37,7 @@ int main()
     sf::Color Pyro(239, 121, 56, 255);
     sf::Color eleStorage[] = { Anemo, Electro, Pyro };
 
+    //Pour les switch statement, Flying/Reposition = ballState, Running/GameWin/GameOver = gameState
     enum State
     {
         Flying,
@@ -65,6 +68,7 @@ int main()
     bool electroSpeed = false;
     bool brickVisible = true;
     bool electroSpeedEnhanced = false;
+    bool winCon = false;
     Ball.setFillColor(Anemo);
     Paddle.setFillColor(Anemo);
     Brick.setFillColor(Electro);
@@ -103,34 +107,59 @@ int main()
 
                     case GameOver:
                         std::cout << "GameOver left click registered" << std::endl;
-                        lives = 3;
-                        ballVisible = true;
-                        brickVisible = true;
-                        electroSpeed = false;
-                        electroSpeedEnhanced = false;
-                        gameState = Running;
                         break;
 
                     case GameWin:
                         std::cout << "GameWin left click registered" << std::endl;
-                        lives = 3;
-                        ballVisible = true;
-                        brickVisible = true;
-                        electroSpeed = false;
-                        electroSpeedEnhanced = false;
-                        gameState = Running;
                         break;
                     }
                 }
-            }
-            if (event.type == sf::Event::MouseButtonPressed)
-            {
                 if (event.mouseButton.button == sf::Mouse::Right)
                 {
                     ballState = Flying;
                 }
             }
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.scancode == sf::Keyboard::Scan::R)
+                {
+                    switch (gameState) {
+                    case Running:
+                        std::cout << "Running R registered" << std::endl;
+                        break;
+                    case GameOver:
+                        std::cout << "GameOver R registered" << std::endl;
+                        Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y); // Reset ball position
+                        speed = Vector2(0.1f, 0.1f);
+                        lives = 3;
+                        ballVisible = true;
+                        brickVisible = true;
+                        electroSpeed = false;
+                        electroSpeedEnhanced = false;
+                        winCon = false;
+                        gameState = Running;
+                        ballState = Reposition;
+                        break;
+
+                    case GameWin:
+                        std::cout << "GameWin R registered" << std::endl;
+                        Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y); // Reset ball position
+                        speed = Vector2(0.1f, 0.1f);
+                        lives = 3;
+                        ballVisible = true;
+                        brickVisible = true; // Make sure brick is visible again
+                        electroSpeed = false;
+                        electroSpeedEnhanced = false;
+                        winCon = false;
+                        gameState = Running;
+                        ballState = Reposition;
+                        Brick.setPosition(((windowSize.m_x / 2) - (brickSize.m_x / 2)), 200); // Reposition brick
+                        break;
+                    }
+                }
+            }
         }
+
         switch (gameState)
         {
         case Running:
@@ -214,7 +243,12 @@ int main()
             if (brickBox.intersects(ballBox) && brickVisible) {
                 brickVisible = false;
                 speed.m_y *= -1.0f;
-                gameState = GameWin;
+                //if wincon est une commande temporaire pour faire fonctionner le code, pour l'instant j'ai pas une bonne place pour la wincon alors elle est la comme example
+                if (winCon) 
+                {
+                    gameState = GameWin;
+                }
+
                 if (Brick.getFillColor() == Electro)
                 {
                     if (electroSpeed == false) {

@@ -25,7 +25,7 @@ public:
 	//Fcts
 	void CreaBall();
 	void MoveBall(Screen window);
-	
+	void SetBallState(BallState ballstate);
 };
 
 class Pyro_Ball : public Ball {

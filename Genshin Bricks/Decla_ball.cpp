@@ -32,3 +32,7 @@ void Ball::MoveBall(Screen window) {
 	if ((m_position.m_y >= (screenSize.m_y - (m_taille * 2))) || (m_position.m_y <= 0)) { m_vitesse.m_y *= -1.0f; }
 	m_forme.move(m_vitesse.m_x, m_vitesse.m_y);
 }
+
+void Ball::SetBallState(BallState ballstate) {
+	m_ballstate = ballstate;
+}

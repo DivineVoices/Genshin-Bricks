@@ -7,19 +7,18 @@
 
 //Constantes
 
-
-
-
 //Game
 class Game {
-	Screen m_Window;
+	Screen m_screen;
 	GameState m_gamestate = Starting;
 
 	//Constantes
 	Ball m_balle;
 	Paddle m_paddle;
 public:
-	Game(Screen Window, Ball balle, Paddle paddle) : m_Window(Window), m_balle(balle), m_paddle(paddle) {};
+	Game(Screen screen, Ball balle, Paddle paddle) : m_screen(screen), m_balle(balle), m_paddle(paddle) {};
 
-	void Init();
+    void Init();
+	void LeftClick();
+	void SetGameState(GameState gamestate);
 };

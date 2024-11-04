@@ -3,7 +3,10 @@
 int main() 
 {
     //A ne pas toucher
-    Game game(Screen Window(), Ball balle, Paddle paddle);
+    Screen screen;
+    Ball balle;
+    Paddle paddle;
+    Game game(screen, balle, paddle);
 
     //Init couleurs
     sf::Color Anemo(116, 194, 168, 255);
@@ -50,23 +53,11 @@ int main()
             {
                 if (event.mouseButton.button == sf::Mouse::Left)
                 {
-                    std::cout << "Left click registered" << std::endl;
-                    switch (gameState) {
-                    case Running:
-                        paddle.SwitchEle();
-
-                    case GameOver:
-                        std::cout << "GameOver left click registered" << std::endl;
-                        break;
-
-                    case GameWin:
-                        std::cout << "GameWin left click registered" << std::endl;
-                        break;
-                    }
+                    game.LeftClick();
                 }
                 if (event.mouseButton.button == sf::Mouse::Right)
                 {
-                    ballState = Flying;
+                    balle.SetBallState(Flying);
                 }
             }
             if (event.type == sf::Event::KeyPressed)

@@ -47,6 +47,9 @@
     <ClInclude Include="Decla_Paddle.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
+    <ClInclude Include="Decla_Game.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="zh-cn.ttf">

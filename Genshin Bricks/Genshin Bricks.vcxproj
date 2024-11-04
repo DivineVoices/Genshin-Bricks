@@ -166,6 +166,7 @@
   <ItemGroup>
     <ClInclude Include="Decla_ball.h" />
     <ClInclude Include="Decla_block.h" />
+    <ClInclude Include="Decla_Game.h" />
     <ClInclude Include="Decla_Screen.h" />
     <ClInclude Include="Fct_Gen.h" />
     <ClInclude Include="Decla_Paddle.h" />

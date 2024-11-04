@@ -3,15 +3,9 @@
 int main() 
 {
     //A ne pas toucher
-    Screen Window;
-    sf::ContextSettings settings = Window.Demarrage();
-    Vector2 windowSize = Window.GetSize(); 
-    sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
-    sf::Font font = FontInit();
-
-    //Création des objets
     Ball balle(10, (300, 400), Vector2(0.1f, 0.1f), 1);
     Paddle paddle((100, 30), (0, 750), 3);
+    Game game(Screen Window(), balle, paddle);
 
     //Initialisation des objets
     balle.CreaBall();

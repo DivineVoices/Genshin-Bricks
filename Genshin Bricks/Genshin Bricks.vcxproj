@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClCompile Include="Decla_ball.cpp" />
     <ClCompile Include="Decla_block.cpp" />
+    <ClCompile Include="Decla_Game.cpp" />
     <ClCompile Include="Decla_Paddle.cpp" />
     <ClCompile Include="Decla_Screen.cpp" />
     <ClCompile Include="Genshin Bricks.cpp" />

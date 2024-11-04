@@ -2,6 +2,7 @@
 #include "Decla_ball.h"
 #include "Decla_block.h"
 #include "Decla_Screen.h"
+#include <SFML/Audio.hpp>
 
 int main() 
 {
@@ -19,6 +20,34 @@ int main()
         std::cerr << "Error loading font\n";
         return -1;
     }
+
+
+
+    sf::SoundBuffer AnemoBrick;
+    if (!AnemoBrick.loadFromFile("Anemo_Brick.wav")) {
+        return -1;
+    }
+
+    sf::SoundBuffer ElectroBrick;
+    if (!ElectroBrick.loadFromFile("Electro_Brick.wav")) {
+        return -1;
+    }
+    
+    sf::SoundBuffer PaddleHit;
+    if (!PaddleHit.loadFromFile("Paddle_Hit.wav")) {
+        return -1;
+    }
+
+    sf::SoundBuffer WallHit;
+    if (!WallHit.loadFromFile("Wall_Hit.wav")) {
+        return -1;
+    }
+
+    sf::Music music;
+    if (!music.openFromFile("Knights_Of_Fav.wav"))
+        return -1; // error
+    music.play();
+    
 
 
     int ballSize(10);
@@ -75,10 +104,16 @@ int main()
     window.setKeyRepeatEnabled(false);
     sf::Text text;
 
+    sf::Sound BrickSound;
+    sf::Sound PaddleSound;
+    sf::Sound BallSound;
+
 
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
+        if (music.getStatus() != sf::Music::Status::Playing)
+            music.play();
         sf::FloatRect paddleBox = Paddle.getGlobalBounds();
         sf::FloatRect ballBox = Ball.getGlobalBounds();
         sf::FloatRect brickBox = Brick.getGlobalBounds();
@@ -167,9 +202,13 @@ int main()
                 Ball.move(speed.m_x, speed.m_y);
 
                 if ((Ball.getPosition().x >= (windowSize.m_x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) {
+                    BallSound.setBuffer(WallHit);
+                    BallSound.play();
                     speed.m_x *= -1.0f; // Reverse x speed on wall collision
                 }
                 if ((Ball.getPosition().y >= (windowSize.m_y - (ballSize * 2))) || (Ball.getPosition().y <= 0)) {
+                    BallSound.setBuffer(WallHit);
+                    BallSound.play();
                     speed.m_y *= -1.0f; // Reverse y speed on wall collision
                 }
 
@@ -231,6 +270,8 @@ int main()
                 // Calculate the ball's position to ensure it bounces correctly
                 if (Ball.getPosition().y + ballSize * 2 >= Paddle.getPosition().y) {
                     // Move the ball just above the paddle to avoid hovering
+                    PaddleSound.setBuffer(PaddleHit);
+                    PaddleSound.play();
                     Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - ballSize * 2);
                     speed.m_y *= -1.0f; // Reverse y-speed
                     sf::Color elementChange = Paddle.getFillColor();
@@ -246,12 +287,14 @@ int main()
                 {
                     gameState = GameWin;
                 }
-
+                
                 if (Brick.getFillColor() == Electro)
                 {
                     if (electroSpeed == false) {
                         if (Ball.getFillColor() == Anemo)
                         {
+                            BrickSound.setBuffer(ElectroBrick);
+                            BrickSound.play();
                             electroSpeedEnhanced = true;
                             electroSpeed = true; // Activate electro speed
                             speed.m_x *= 2.0f;     // Double the speed
@@ -260,6 +303,8 @@ int main()
                         }
                         else
                         {
+                            BrickSound.setBuffer(ElectroBrick);
+                            BrickSound.play();
                             electroSpeedEnhanced = false;
                             electroSpeed = true; // Activate electro speed
                             speed.m_x *= 1.5f;     // Double the speed
@@ -267,6 +312,26 @@ int main()
                             gameClock.restart();
                         }
                     }
+                }
+                if (Brick.getFillColor() == Anemo)
+                {
+                    if (Ball.getFillColor() == Electro)
+                    {
+                        BrickSound.setBuffer(AnemoBrick);
+                        BrickSound.play();
+                        electroSpeedEnhanced = true;
+                        electroSpeed = true; // Activate electro speed
+                        speed.m_x *= 2.0f;     // Double the speed
+                        speed.m_y *= 2.0f;     // Double the speed
+                        gameClock.restart();  // Restart the game clock to track this effect duration
+
+                    }
+                    else
+                    {
+                        BrickSound.setBuffer(AnemoBrick);
+                        BrickSound.play();
+                    }
+                    
                 }
             }
             break;

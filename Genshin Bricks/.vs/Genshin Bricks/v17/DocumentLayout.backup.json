@@ -42,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -51,18 +51,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Decla_block.cpp",
-              "DocumentMoniker": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.cpp",
-              "RelativeDocumentMoniker": "Decla_block.cpp",
-              "ToolTip": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.cpp",
-              "RelativeToolTip": "Decla_block.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T11:00:14.952Z"
             },
             {
               "$type": "Document",
@@ -102,6 +90,31 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Genshin Bricks.cpp",
+              "DocumentMoniker": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
+              "RelativeDocumentMoniker": "Genshin Bricks.cpp",
+              "ToolTip": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
+              "RelativeToolTip": "Genshin Bricks.cpp",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFwAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T07:16:55.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Decla_block.cpp",
+              "DocumentMoniker": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.cpp",
+              "RelativeDocumentMoniker": "Decla_block.cpp",
+              "ToolTip": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.cpp",
+              "RelativeToolTip": "Decla_block.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-28T11:00:14.952Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Decla_ball.cpp",
               "DocumentMoniker": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_ball.cpp",
@@ -135,19 +148,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-28T11:43:31.513Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Genshin Bricks.cpp",
-              "DocumentMoniker": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
-              "RelativeDocumentMoniker": "Genshin Bricks.cpp",
-              "ToolTip": "C:\\Users\\dpereme\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
-              "RelativeToolTip": "Genshin Bricks.cpp",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAAAPcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-28T07:16:55.428Z",
-              "EditorCaption": ""
             }
           ]
         }

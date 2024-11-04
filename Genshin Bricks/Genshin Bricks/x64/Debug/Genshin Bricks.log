@@ -1,15 +1,15 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(12,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(12,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(27,30): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(27,16): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(178,50): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(203,111): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(13,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(13,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(56,30): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(56,16): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(217,50): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(242,111): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int
           ]
-C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(204,92): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(243,92): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
           with
           [
               T=int

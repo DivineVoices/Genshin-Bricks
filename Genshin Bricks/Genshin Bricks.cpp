@@ -27,17 +27,7 @@ int main()
     sf::Color Pyro(239, 121, 56, 255);
     sf::Color White(255, 255, 255, 255);
     sf::Color eleStorage[] = { Anemo, Electro, Pyro };
-
-    //Pour les switch statement, Flying/Reposition = ballState, Running/GameWin/GameOver = gameState
-    enum State
-    {
-        Flying,
-        Reposition,
-        Running,
-        GameOver,
-        GameWin,
-    };
-
+ 
     State gameState = Running;
     State ballState = Flying;
 
@@ -82,13 +72,7 @@ int main()
                     std::cout << "Left click registered" << std::endl;
                     switch (gameState) {
                     case Running:
-                        std::cout << "Running left click registered" << std::endl;
-                        eleSwitcher += 1;
-                        if (eleSwitcher > 2) {
-                            eleSwitcher = 0;
-                        }
-                        Paddle.setFillColor(eleStorage[eleSwitcher]);
-                        break;
+                        paddle.SwitchEle();
 
                     case GameOver:
                         std::cout << "GameOver left click registered" << std::endl;

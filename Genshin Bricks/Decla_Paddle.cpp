@@ -12,6 +12,9 @@ int Paddle::GetLife() {
 sf::RectangleShape Paddle::GetForm() {
 	return m_forme;
 }
+Element Paddle::GetEle() {
+	return m_element;
+}
 
 void Paddle::CreaPad() {
 	sf::Color White(255, 255, 255, 255);
@@ -20,5 +23,18 @@ void Paddle::CreaPad() {
 	m_forme = Paddle;
 }
 void Paddle::SwitchEle() {
-
+	switch (m_element) {
+	case 1:
+		m_element = Electro;
+		m_forme.setFillColor(sf::Color (167, 86, 204, 255));
+		break;
+	case 2:
+		m_element = Pyro;
+		m_forme.setFillColor(sf::Color(239, 121, 56, 255));
+		break;
+	case 3:
+		m_element = Anemo;
+		m_forme.setFillColor(sf::Color(116, 194, 168, 255));
+		break;
+	}
 }

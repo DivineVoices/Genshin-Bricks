@@ -10,13 +10,14 @@ class Paddle {
 
 public:
 	//Constructeur
-	Paddle(Vector2 taille, Vector2 position, int lives) : m_size(taille), m_position(position), m_lives(lives) {};
+	Paddle(Vector2 taille, Vector2 position, int lives, Element element = Anemo) : m_size(taille), m_position(position), m_lives(lives), m_element(element) {};
 
 	//Gets
 	Vector2 GetSize();
 	Vector2 GetPos();
 	int GetLife();
 	sf::RectangleShape GetForm();
+	Element GetEle();
 
 	//Fcts
 	void CreaPad();

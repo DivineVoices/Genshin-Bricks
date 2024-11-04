@@ -37,7 +37,15 @@ sf::Font FontInit(){
 }
 
 enum Element {
-	Anemo,
+	Anemo = 1,
 	Electro,
 	Pyro,
+};
+
+enum State {
+	Flying,
+	Reposition,
+	Running,
+	GameOver,
+	GameWin,
 };

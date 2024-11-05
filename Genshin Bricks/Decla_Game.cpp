@@ -45,6 +45,9 @@ void Game::RestartGame() {
 Ball Game::GetBall() {
     return m_balle;
 }
+Paddle Game::GetPaddle() {
+    return m_paddle;
+}
 
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
     sf::Text text;

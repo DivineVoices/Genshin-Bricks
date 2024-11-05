@@ -47,8 +47,11 @@ int main()
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
-        sf::CircleShape forballebox = balle.GetForm();
-        sf::RectangleShape forpaddlebox = paddle.GetForm();
+        Ball vrballe = game.GetBall();
+        Paddle vrpaddle = game.GetPaddle();
+
+        sf::CircleShape forballebox = vrballe.GetForm();
+        sf::RectangleShape forpaddlebox = vrpaddle.GetForm();
 
         sf::FloatRect paddleBox = forpaddlebox.getGlobalBounds();
         sf::FloatRect ballBox = forballebox.getGlobalBounds();
@@ -107,17 +110,18 @@ int main()
             switch (game.GetBallState())
             {
             case Flying:
+
                 balle.MoveBall(screen);
 
                 break;
             case Repositionning:
-                Ball balle = game.GetBall();
-                balle.SetPos(Vector2 (mousePosition.x - balle.GetSize(), 730));
+                
+                vrballe.SetPos(Vector2 (mousePosition.x - vrballe.GetSize(), 730));
                 break;
             }
 
             window.clear();
-            window.draw(Ball);
+            window.draw();
             window.draw(Paddle);
             if (brickVisible) {
                 window.draw(Brick);

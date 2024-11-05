@@ -11,6 +11,4 @@ public:
 	//Gets
 	Vector2 GetSize();
 
-	//Fonctions
-	sf::ContextSettings Demarrage();
 };

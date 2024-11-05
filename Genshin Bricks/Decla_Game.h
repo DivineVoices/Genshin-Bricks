@@ -18,6 +18,7 @@ class Game {
 public:
 	Game(Screen screen, Ball balle, Paddle paddle) : m_screen(screen), m_balle(balle), m_paddle(paddle) {};
 
+	Vector2 GetScreenSize();
     void Init();
 	void LeftClick();
 	void SetGameState(GameState gamestate);

@@ -6,10 +6,11 @@ int main()
     Screen screen;
     Ball balle;
     Paddle paddle;
-    Game game(screen, balle, paddle);
+    Game game(screen,balle,paddle);
 
-    sf::ContextSettings settings = screen.Demarrage();
-    Vector2 windowSize = screen.GetSize();
+    sf::ContextSettings settings;
+    settings.antialiasingLevel = 8;
+    Vector2 windowSize = game.GetScreenSize();
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
     sf::Font font = FontInit();
     
@@ -106,17 +107,10 @@ int main()
             switch (ballState)
             {
             case Flying:
-                Ball.move(speed.m_x, speed.m_y);
-
-                if ((Ball.getPosition().x >= (windowSize.m_x - (balle.GetSize() * 2))) || (Ball.getPosition().x <= 0)) {
-                    speed.m_x *= -1.0f; // Reverse x speed on wall collision
-                }
-                if ((Ball.getPosition().y >= (windowSize.m_y - (balle.GetSize() * 2))) || (Ball.getPosition().y <= 0)) {
-                    speed.m_y *= -1.0f; // Reverse y speed on wall collision
-                }
+                balle.MoveBall(screen);
 
                 break;
-            case Reposition:
+            case Repositionning:
                 Ball.setPosition(mousePosition.x - balle.GetSize(), 730);
                 break;
             }

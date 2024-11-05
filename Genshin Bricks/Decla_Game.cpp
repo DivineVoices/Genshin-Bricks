@@ -1,5 +1,8 @@
 #include "Decla_Game.h"
 
+Vector2 Game::GetScreenSize() {
+    return m_screen.GetSize();
+}
 void Game::Init() {
     m_balle.CreaBall();
     m_paddle.CreaPad();

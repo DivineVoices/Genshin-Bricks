@@ -17,11 +17,11 @@ int main()
 
 
     //Init couleurs
-    sf::Color Anemo(116, 194, 168, 255);
-    sf::Color Electro(167, 86, 204, 255);
-    sf::Color Pyro(239, 121, 56, 255);
-    sf::Color White(255, 255, 255, 255);
-    sf::Color eleStorage[] = { Anemo, Electro, Pyro };
+    sf::Color colorAnemo(116, 194, 168, 255);
+    sf::Color colorElectro(167, 86, 204, 255);
+    sf::Color colorPyro(239, 121, 56, 255);
+    sf::Color colorWhite(255, 255, 255, 255);
+    sf::Color eleStorage[] = { colorAnemo, colorElectro, colorPyro };
 
     //Init Clock
     sf::Clock gameClock;
@@ -37,7 +37,7 @@ int main()
     bool brickVisible = true;
     bool electroSpeedEnhanced = false;
     bool winCon = false;
-    Brick.setFillColor(Electro);
+    Brick.setFillColor(colorElectro);
     window.setKeyRepeatEnabled(false);
     sf::Text text;
 
@@ -184,7 +184,7 @@ int main()
                     game.SetGameState(GameWin);
                 }
 
-                if (Brick.getFillColor() == Electro)
+                if (Brick.getFillColor() == colorElectro)
                 {
                     if (electroSpeed == false) {
                         if (vrballe.GetEle() == Anemo)
@@ -209,13 +209,13 @@ int main()
             break;
         case GameOver:
             window.clear();
-            window.draw(game.TextGameOver(Electro,windowSize));
+            window.draw(game.TextGameOver(colorElectro,windowSize));
             window.display();
             break;
 
         case GameWin:
             window.clear();
-            window.draw(game.TextGameOver(Anemo, windowSize));
+            window.draw(game.TextGameOver(colorAnemo, windowSize));
             window.display();
             break;
         }

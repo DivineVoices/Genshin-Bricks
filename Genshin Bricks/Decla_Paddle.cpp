@@ -1,13 +1,14 @@
 #include "Decla_Paddle.h"
 
+//Gets
+int Paddle::GetLife() {
+	return m_lives;
+}
 Vector2 Paddle::GetSize() {
 	return m_size;
 }
 Vector2 Paddle::GetPos() {
 	return m_position;
-}
-int Paddle::GetLife() {
-	return m_lives;
 }
 sf::RectangleShape Paddle::GetForm() {
 	return m_forme;
@@ -16,6 +17,16 @@ Element Paddle::GetEle() {
 	return m_element;
 }
 
+//Sets
+void Paddle::SetLife(int i) {
+	m_lives += i;
+}
+void Paddle::SetPos(Vector2 V) {
+	m_position.m_x = V.m_x;
+	m_position.m_y = V.m_y;
+}
+
+//Fcts
 void Paddle::ResetLife() {
 	m_lives = 3;
 }
@@ -42,10 +53,3 @@ void Paddle::SwitchEle() {
 	}
 }
 
-void Paddle::SetLife(int i) {
-	m_lives += i;
-}
-void Paddle::SetPos(Vector2 V) {
-	m_position.m_x = V.m_x;
-	m_position.m_y = V.m_y;
-}

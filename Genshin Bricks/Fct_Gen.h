@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
+//Structs
 struct Vector2 {
 	float m_x, m_y;
 	Vector2(float x = 0, float y = 0) : m_x(x), m_y(y) {}
@@ -26,6 +27,7 @@ struct Vector2 {
 	}
 };
 
+//Fonts
 sf::Font FontInit(){
 	sf::Font font;
 	if (!font.loadFromFile("zh-cn.ttf")) {
@@ -36,6 +38,7 @@ sf::Font FontInit(){
 	}
 }
 
+//Enums
 enum Element {
 	Anemo = 1,
 	Electro,

@@ -1,8 +1,28 @@
 #include "Decla_Game.h"
 
+//Gets
+Ball Game::GetBall() {
+    return m_balle;
+}
+Paddle Game::GetPaddle() {
+    return m_paddle;
+}
 Vector2 Game::GetScreenSize() {
     return m_screen.GetSize();
 }
+GameState Game::GetGameState() {
+    return m_gamestate;
+}
+BallState Game::GetBallState() {
+    return m_balle.GetBallState();
+}
+
+//Sets
+void Game::SetGameState(GameState gamestate) {
+    m_gamestate = gamestate;
+}
+
+//Fcts
 void Game::Init() {
     m_balle.CreaBall();
     m_paddle.CreaPad();
@@ -25,15 +45,6 @@ void Game::LeftClick() {
         break;
     }
 }
-void Game::SetGameState(GameState gamestate) {
-    m_gamestate = gamestate;
-}
-GameState Game::GetGameState() {
-    return m_gamestate;
-}
-BallState Game::GetBallState() {
-    return m_balle.GetBallState();
-}
 void Game::RestartGame() {
     m_balle.SetPos(m_balle.GetStartPos());
     m_balle.SetVit(Vector2(0.1f, 0.1f));
@@ -41,12 +52,6 @@ void Game::RestartGame() {
     m_balle.SetVisible(true);
     m_gamestate = Running;
     m_balle.SetBallState(Repositionning);
-}
-Ball Game::GetBall() {
-    return m_balle;
-}
-Paddle Game::GetPaddle() {
-    return m_paddle;
 }
 void Game::Death() {
     m_paddle.SetLife(-1);
@@ -56,7 +61,6 @@ void Game::Death() {
 void Game::ChangeElement() {
     m_balle.SetElement(m_paddle.GetEle());
 }
-
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
     sf::Text text;
     sf::Font font = FontInit();

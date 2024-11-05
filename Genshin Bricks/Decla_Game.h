@@ -5,31 +5,35 @@
 #include "Decla_Screen.h"
 #include "Decla_Paddle.h"
 
-//Constantes
-
-//Game
 class Game {
+	//Objets
 	Screen m_screen;
-	GameState m_gamestate = Starting;
-
-	//Constantes
 	Ball m_balle;
 	Paddle m_paddle;
+
+	//Variables
+	GameState m_gamestate = Starting;
+
 public:
+	//Constructeur
 	Game(Screen screen, Ball balle, Paddle paddle) : m_screen(screen), m_balle(balle), m_paddle(paddle) {};
 
-	Vector2 GetScreenSize();
-    void Init();
-	void LeftClick();
-	void SetGameState(GameState gamestate);
-	void RestartGame();
-	GameState GetGameState();
-	BallState GetBallState();
+	//Gets
 	Ball GetBall();
 	Paddle GetPaddle();
+	Vector2 GetScreenSize();
+	GameState GetGameState();
+	BallState GetBallState();
+
+	//Sets
+	void SetGameState(GameState gamestate);
+
+	//Fcts
+    void Init();
+	void LeftClick();
+	void RestartGame();
 	void Death();
 	void ChangeElement();
-
 	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize);
 	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize);
 };

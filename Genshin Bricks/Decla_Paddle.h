@@ -2,9 +2,11 @@
 #include "Fct_Gen.h"
 
 class Paddle {
+	int m_lives;
+
 	Vector2 m_size;
 	Vector2 m_position;
-	int m_lives;
+
 	sf::RectangleShape m_forme;
 	Element m_element;
 

@@ -3,15 +3,16 @@
 #include "Decla_Screen.h"
 
 class Ball {
+	bool m_visible;
 	float m_taille;
+
 	Vector2 m_position;
 	Vector2 m_startpos;
 	Vector2 m_vitesse;
 
-	sf::CircleShape m_forme;
-	bool m_visible;
 	BallState m_ballstate = Repositionning;
 	Element m_element = Anemo;
+	sf::CircleShape m_forme;
 	
 public:
 	//Constructeur
@@ -37,11 +38,4 @@ public:
 	//Fcts
 	void CreaBall();
 	void MoveBall(Screen window);
-};
-
-class Pyro_Ball : public Ball {
-
-public:
-	//Constructeur
-	Pyro_Ball(float taille, Vector2 position, Vector2 vitesse, int degats) : Ball(taille, position, vitesse, degats) {};
 };

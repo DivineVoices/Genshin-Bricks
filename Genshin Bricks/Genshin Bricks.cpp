@@ -121,8 +121,8 @@ int main()
             }
 
             window.clear();
-            window.draw();
-            window.draw(Paddle);
+            window.draw(vrballe.GetForm());
+            window.draw(vrpaddle.GetForm());
             if (brickVisible) {
                 window.draw(Brick);
             }
@@ -131,20 +131,18 @@ int main()
 
             if (paddle.GetLife() <= 0)
             {
-                gameState = GameOver;
+                game.SetGameState(GameOver);
             }
 
-            if (Ball.getPosition().y >= 770) {
-                lives -= 1;
-                std::cout << lives << std::endl;
-                ballState = Reposition;
+            if (vrballe.GetPos().m_y >= 770) {
+                game.Death();
             }
             mousePosition = sf::Mouse::getPosition(window);
 
-            if (mousePosition.x >= (windowSize.m_x - (paddleSize.m_x / 2))) mousePosition.x = (windowSize.m_x - (paddleSize.m_x / 2));
-            if (mousePosition.x <= (paddleSize.m_x / 2)) mousePosition.x = (paddleSize.m_x / 2);
+            if (mousePosition.x >= (windowSize.m_x - (vrpaddle.GetSize().m_x / 2))) mousePosition.x = (windowSize.m_x - (vrpaddle.GetSize().m_x / 2));
+            if (mousePosition.x <= (vrpaddle.GetSize().m_x / 2)) mousePosition.x = (vrpaddle.GetSize().m_x / 2);
 
-            Paddle.setPosition(mousePosition.x - (paddleSize.m_x / 2), 750);
+            vrpaddle.SetPos(Vector2(mousePosition.x - (vrpaddle.GetSize().m_x / 2), 750));
             Brick.setPosition(((windowSize.m_x / 2) - (brickSize.m_x / 2)), 200);
 
 

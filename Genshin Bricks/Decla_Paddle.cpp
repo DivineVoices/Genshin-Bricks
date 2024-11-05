@@ -41,3 +41,11 @@ void Paddle::SwitchEle() {
 		break;
 	}
 }
+
+void Paddle::SetLife(int i) {
+	m_lives += i;
+}
+void Paddle::SetPos(Vector2 V) {
+	m_position.m_x = V.m_x;
+	m_position.m_y = V.m_y;
+}

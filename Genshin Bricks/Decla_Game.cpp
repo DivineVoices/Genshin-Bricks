@@ -48,6 +48,11 @@ Ball Game::GetBall() {
 Paddle Game::GetPaddle() {
     return m_paddle;
 }
+void Game::Death() {
+    m_paddle.SetLife(-1);
+    std::cout << m_paddle.GetLife() << std::endl;
+    m_balle.SetBallState(Repositionning);
+}
 
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
     sf::Text text;

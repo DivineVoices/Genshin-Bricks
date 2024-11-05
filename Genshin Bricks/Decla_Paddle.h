@@ -19,6 +19,10 @@ public:
 	sf::RectangleShape GetForm();
 	Element GetEle();
 
+	//Sets
+	void SetLife(int i);
+	void SetPos(Vector2 V);
+
 	//Fcts
 	void ResetLife();
 	void CreaPad();

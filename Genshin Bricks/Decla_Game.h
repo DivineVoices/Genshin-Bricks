@@ -21,4 +21,6 @@ public:
     void Init();
 	void LeftClick();
 	void SetGameState(GameState gamestate);
+	void RestartGame();
+	GameState GetGameState();
 };

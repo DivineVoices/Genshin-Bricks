@@ -25,3 +25,10 @@ void Game::LeftClick() {
 void Game::SetGameState(GameState gamestate) {
     m_gamestate = gamestate;
 }
+GameState Game::GetGameState() {
+    return m_gamestate;
+}
+
+void Game::RestartGame() {
+    m_balle.SetPos()
+}

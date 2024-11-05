@@ -36,3 +36,8 @@ void Ball::MoveBall(Screen window) {
 void Ball::SetBallState(BallState ballstate) {
 	m_ballstate = ballstate;
 }
+
+void Ball::SetPos(float x, float y) {
+	m_position.m_x = x;
+	m_position.m_y = y;
+}

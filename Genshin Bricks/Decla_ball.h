@@ -5,6 +5,7 @@
 class Ball {
 	float m_taille;
 	Vector2 m_position;
+	Vector2 m_startpos;
 	Vector2 m_vitesse;
 	int m_degats;
 	sf::CircleShape m_forme;
@@ -13,7 +14,7 @@ class Ball {
 	
 public:
 	//Constructeur
-	Ball(float taille = 10, Vector2 position = Vector2(300,400), Vector2 vitesse = Vector2 (0.1f,0.1f), int degats = 1, bool visible = true) : m_taille(taille), m_position(position), m_vitesse(vitesse), m_degats(degats), m_visible(visible) {};
+	Ball(float taille = 10, Vector2 position = Vector2(300,400), Vector2 vitesse = Vector2(0.1f, 0.1f), int degats = 1, bool visible = true) : m_taille(taille), m_position(position), m_startpos(position), m_vitesse(vitesse), m_degats(degats), m_visible(visible) {};
 
 	//Gets
 	float GetSize();
@@ -23,6 +24,7 @@ public:
 	bool GetVis();
 
 	//Fcts
+	void SetPos(float x, float y);
 	void CreaBall();
 	void MoveBall(Screen window);
 	void SetBallState(BallState ballstate);

@@ -40,6 +40,9 @@ int main()
     window.setKeyRepeatEnabled(false);
     sf::Text text;
 
+    //Démarrage
+    game.SetGameState(Running);
+
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
@@ -71,7 +74,7 @@ int main()
             {
                 if (event.key.scancode == sf::Keyboard::Scan::R)
                 {
-                    switch (gameState) {
+                    switch (game.GetGameState()) {
                     case Running:
                         std::cout << "Running R registered" << std::endl;
                         break;

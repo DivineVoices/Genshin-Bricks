@@ -53,6 +53,9 @@ void Game::Death() {
     std::cout << m_paddle.GetLife() << std::endl;
     m_balle.SetBallState(Repositionning);
 }
+void Game::ChangeElement() {
+
+}
 
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
     sf::Text text;

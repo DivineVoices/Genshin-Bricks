@@ -11,6 +11,7 @@ class Ball {
 	sf::CircleShape m_forme;
 	bool m_visible;
 	BallState m_ballstate = Repositionning;
+
 	
 public:
 	//Constructeur

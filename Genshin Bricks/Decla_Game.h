@@ -28,6 +28,7 @@ public:
 	Ball GetBall();
 	Paddle GetPaddle();
 	void Death();
+	void ChangeElement();
 
 	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize);
 	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize);

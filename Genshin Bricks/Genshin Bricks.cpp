@@ -168,9 +168,9 @@ int main()
             if (paddleBox.intersects(ballBox))
             {
                 // Calculate the ball's position to ensure it bounces correctly
-                if (Ball.getPosition().y + balle.GetSize() * 2 >= Paddle.getPosition().y) {
+                if (vrballe.GetPos().m_y + balle.GetSize() * 2 >= vrpaddle.GetPos().m_y) {
                     // Move the ball just above the paddle to avoid hovering
-                    Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - balle.GetSize() * 2);
+                    vrballe.SetPos(Vector2 (vrballe.GetPos().m_x, vrpaddle.GetPos().m_y - balle.GetSize() * 2));
                     speed.m_y *= -1.0f; // Reverse y-speed
                     sf::Color elementChange = Paddle.getFillColor();
                     Ball.setFillColor(elementChange);
@@ -183,13 +183,13 @@ int main()
                 //if wincon est une commande temporaire pour faire fonctionner le code, pour l'instant j'ai pas une bonne place pour la wincon alors elle est la comme example
                 if (winCon) 
                 {
-                    gameState = GameWin;
+                    game.SetGameState(GameWin);
                 }
 
                 if (Brick.getFillColor() == Electro)
                 {
                     if (electroSpeed == false) {
-                        if (Ball.getFillColor() == Anemo)
+                        if (vrballe.getFillColor() == Anemo)
                         {
                             electroSpeedEnhanced = true;
                             electroSpeed = true; // Activate electro speed

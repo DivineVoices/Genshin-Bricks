@@ -14,8 +14,6 @@ int main()
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
     sf::Font font = FontInit();
     
-
-
     //Init couleurs
     sf::Color colorAnemo(116, 194, 168, 255);
     sf::Color colorElectro(167, 86, 204, 255);

@@ -208,13 +208,13 @@ int main()
             break;
         case GameOver:
             window.clear();
-            window.draw(game.GameOver(Electro,windowSize));
+            window.draw(game.TextGameOver(Electro,windowSize));
             window.display();
             break;
 
         case GameWin:
             window.clear();
-            window.draw(game.GameOver(Anemo, windowSize));
+            window.draw(game.TextGameOver(Anemo, windowSize));
             window.display();
             break;
         }

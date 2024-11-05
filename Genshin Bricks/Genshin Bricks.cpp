@@ -80,7 +80,10 @@ int main()
 
     // Charger les textures pour les briques
     Brick::loadTextures();
-
+    sf::Texture backgroundT;
+    backgroundT.loadFromFile("mondstadt.png");
+    sf::Sprite background;
+    background.setTexture(backgroundT);
     Vector2 screenSize(600, 800);
     sf::RenderWindow window(sf::VideoMode(screenSize.x, screenSize.y), "Genshin Bricks", sf::Style::Default, settings);
 
@@ -95,17 +98,16 @@ int main()
     float padding = 10.0f;
 
     vector<string> layout = {
-        "aeae----",
-        "-paeepaa",
-        "epap-eep",
-        "pp-aeeee",
+        "aeaeappe",
+        "apaeepaa",
+        "epapeeep",
+        "pppaeeee",
         "eappaepe"
     };
     int rows = layout.size();
     int cols = layout[0].size();
     vector<Brick> bricks;
-    int rows = 5;   // Nombre de lignes
-    int cols = 8;   // Nombre de colonnes
+
 
     // Création des briques en grille
     // Adjust brick positions based on layout and add to vector
@@ -147,7 +149,6 @@ int main()
         cerr << "Erreur de chargement de la texture " << textStorage[eleSwitcher] << endl;
         return -1; // Quitter si la texture ne se charge pas
     }
-    sf::RectangleShape Paddle(sf::Vector2f(100.0f, 30.0f)); // Créer une raquette de taille 100x30
     Paddle.setTexture(&paddleTexture);
     while (window.isOpen())
     {
@@ -172,6 +173,7 @@ int main()
         window.clear();
 
         // Dessiner la balle, la raquette et les briques visibles
+        window.draw(background);
         window.draw(Ball);
         window.draw(Paddle);
 
@@ -206,7 +208,7 @@ int main()
             electroDuration = gameClock.getElapsedTime();
 
             // Check if the duration has exceeded 3 seconds
-            if (electroDuration.asSeconds() >= 3) {
+            if (electroDuration.asSeconds() >= 2) {
                 if (electroSpeedEnhanced == 1) {
                     electroSpeed = false; // Reset the speed flag
                     speed.x /= 1.5f;      // Reset speed to normal
@@ -259,19 +261,38 @@ int main()
                     (brick.Element == Pyro && Ball.getFillColor() == Electro)) {
 
                     // Rendre invisible la brique touchée et les briques adjacentes
+                    cout << i << endl;
                     brick.is_visible = false;
-                    int row = i / cols;
-                    int col = i % cols;
 
                     // Indices pour les briques adjacentes (haut, gauche, droite)
-                    int topIndex = getBrickIndex(row - 1, col, rows, cols);
-
+                    int topIndex = i - cols;
+                    cout << topIndex << endl;
                     // Casser les briques adjacentes si elles existent
-                    if (topIndex != -1 && bricks[topIndex].is_visible) bricks[topIndex].is_visible = false;
-                } // Stop checking further bricks after collision
+                    if (topIndex >= 0 && bricks[topIndex].is_visible) bricks[topIndex].is_visible = false;
+                }
+                if (brick.Element == Pyro && Ball.getFillColor() == Pyro) 
+                {
+                    brick.is_visible = false;
+                    if (i - cols >= 0 && bricks[i - 8].is_visible) bricks[i - 8].is_visible = false;
+                    if (i - 1 >= 0 && bricks[i - 1].is_visible) bricks[i - 1].is_visible = false;
+                    if (i + 1 >= 0 && bricks[i + 1].is_visible) bricks[i + 1].is_visible = false;
+                }
+                if ((brick.Element == Pyro && Ball.getFillColor() == Anemo) || (brick.Element == Anemo && Ball.getFillColor() == Pyro)) 
+                {
+                    brick.is_visible = false;
+                    if (i-8 >= 0 && bricks[i-8].is_visible) bricks[i-8].is_visible = false;
+                    if (i-1 >= 0 && bricks[i-1].is_visible) bricks[i-1].is_visible = false;
+                    if (i+1 >= 0 && bricks[i+1].is_visible) bricks[i+1].is_visible = false;
+                    if (i + 2 >= 0 && bricks[i + 2].is_visible) bricks[i + 2].is_visible = false;
+                    if (i - 2 >= 0 && bricks[i - 2].is_visible) bricks[i - 2].is_visible = false;
+                    if (i - 16 >= 0 && bricks[i - 16].is_visible) bricks[i - 16].is_visible = false;
+
+                }
                 else {
                     brick.is_visible = false;
                 }
+
+
                 break;  // Ne vérifier qu'une seule collision par frame
             }
         }

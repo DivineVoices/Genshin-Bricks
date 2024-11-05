@@ -16,6 +16,9 @@ Element Paddle::GetEle() {
 	return m_element;
 }
 
+void Paddle::ResetLife() {
+	m_lives = 3;
+}
 void Paddle::CreaPad() {
 	sf::Color White(255, 255, 255, 255);
 	sf::RectangleShape Paddle(sf::Vector2f(m_size.m_x, m_size.m_y));

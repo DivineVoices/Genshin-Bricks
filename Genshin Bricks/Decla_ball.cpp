@@ -15,6 +15,9 @@ sf::CircleShape Ball::GetForm() {
 bool Ball::GetVis() {
 	return m_visible;
 }
+Vector2 Ball::GetStartPos() {
+	return m_startpos;
+}
 
 void Ball::CreaBall() {
 	sf::Color White(255, 255, 255, 255);
@@ -37,7 +40,16 @@ void Ball::SetBallState(BallState ballstate) {
 	m_ballstate = ballstate;
 }
 
-void Ball::SetPos(float x, float y) {
-	m_position.m_x = x;
-	m_position.m_y = y;
+void Ball::SetPos(Vector2 V) {
+	m_position.m_x = V.m_x;
+	m_position.m_y = V.m_y;
+}
+
+void Ball::SetVit(Vector2 V) {
+	m_vitesse.m_x = V.m_x;
+	m_vitesse.m_y = V.m_y;
+}
+
+void Ball::SetVisible(bool visible) {
+	m_visible = visible;
 }

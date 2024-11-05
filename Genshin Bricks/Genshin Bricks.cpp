@@ -80,30 +80,19 @@ int main()
                         break;
                     case GameOver:
                         std::cout << "GameOver R registered" << std::endl;
-                        Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y); // Reset ball position
-                        speed = Vector2(0.1f, 0.1f);
-                        lives = 3;
-                        ballVisible = true;
+                        game.RestartGame();
                         brickVisible = true;
                         electroSpeed = false;
                         electroSpeedEnhanced = false;
                         winCon = false;
-                        gameState = Running;
-                        ballState = Reposition;
                         break;
 
                     case GameWin:
                         std::cout << "GameWin R registered" << std::endl;
-                        Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y); // Reset ball position
-                        speed = Vector2(0.1f, 0.1f);
-                        lives = 3;
-                        ballVisible = true;
-                        brickVisible = true; // Make sure brick is visible again
+                        game.RestartGame();
                         electroSpeed = false;
                         electroSpeedEnhanced = false;
                         winCon = false;
-                        gameState = Running;
-                        ballState = Reposition;
                         Brick.setPosition(((windowSize.m_x / 2) - (brickSize.m_x / 2)), 200); // Reposition brick
                         break;
                     }

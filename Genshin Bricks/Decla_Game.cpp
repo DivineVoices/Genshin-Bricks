@@ -30,5 +30,10 @@ GameState Game::GetGameState() {
 }
 
 void Game::RestartGame() {
-    m_balle.SetPos()
+    m_balle.SetPos(m_balle.GetStartPos());
+    m_balle.SetVit(Vector2(0.1f, 0.1f));
+    m_paddle.ResetLife();
+    m_balle.SetVisible(true);
+    m_gamestate = Running;
+    m_balle.SetBallState(Repositionning);
 }

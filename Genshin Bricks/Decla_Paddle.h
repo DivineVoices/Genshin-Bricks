@@ -20,6 +20,7 @@ public:
 	Element GetEle();
 
 	//Fcts
+	void ResetLife();
 	void CreaPad();
 	void SwitchEle();
 };

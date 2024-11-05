@@ -22,12 +22,17 @@ public:
 	Vector2 GetVit();
 	sf::CircleShape GetForm();
 	bool GetVis();
+	Vector2 GetStartPos();
+
+	//Sets
+	void SetPos(Vector2 V);
+	void SetVit(Vector2 V);
+	void SetBallState(BallState ballstate);
+	void SetVisible(bool visible);
 
 	//Fcts
-	void SetPos(float x, float y);
 	void CreaBall();
 	void MoveBall(Screen window);
-	void SetBallState(BallState ballstate);
 };
 
 class Pyro_Ball : public Ball {

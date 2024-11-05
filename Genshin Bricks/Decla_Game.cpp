@@ -40,3 +40,28 @@ void Game::RestartGame() {
     m_gamestate = Running;
     m_balle.SetBallState(Repositionning);
 }
+
+sf::Text Game::GameOver(sf::Color couleur, Vector2 windowSize) {
+    sf::Text text;
+    sf::Font font = FontInit();
+
+    text.setFont(font);
+    text.setString("The abyss claims all.");
+    text.setCharacterSize(20);
+    text.setFillColor(couleur);
+    text.setPosition(windowSize.m_x / 2 - 100, windowSize.m_y / 2 - 25);
+
+    return text;
+}
+sf::Text Game::GameWin(sf::Color couleur, Vector2 windowSize) {
+    sf::Text text;
+    sf::Font font = FontInit();
+
+    text.setFont(font);
+    text.setString("Let the wind guide you!");
+    text.setCharacterSize(20);
+    text.setFillColor(couleur);
+    text.setPosition(windowSize.m_x / 2 - 100, windowSize.m_y / 2 - 25);
+
+    return text;
+}

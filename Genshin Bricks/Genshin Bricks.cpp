@@ -207,26 +207,14 @@ int main()
             }
             break;
         case GameOver:
-            text.setFont(font);
-            text.setString("The abyss claims all.");
-            text.setCharacterSize(20);
-            text.setFillColor(Electro);
-            text.setPosition(windowSize.m_x / 2 - 100, windowSize.m_y / 2 - 25);
-
             window.clear();
-            window.draw(text);
+            window.draw(game.GameOver(Electro,windowSize));
             window.display();
             break;
 
         case GameWin:
-            text.setFont(font);
-            text.setString("Let the wind guide you!");
-            text.setCharacterSize(20);
-            text.setFillColor(Anemo);
-            text.setPosition(windowSize.m_x / 2 - 100, windowSize.m_y / 2 - 25);
-
             window.clear();
-            window.draw(text);
+            window.draw(game.GameOver(Anemo, windowSize));
             window.display();
             break;
         }

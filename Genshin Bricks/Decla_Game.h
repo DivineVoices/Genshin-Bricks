@@ -24,4 +24,7 @@ public:
 	void SetGameState(GameState gamestate);
 	void RestartGame();
 	GameState GetGameState();
+
+	sf::Text GameOver(sf::Color couleur, Vector2 windowSize);
+	sf::Text GameWin(sf::Color couleur, Vector2 windowSize);
 };

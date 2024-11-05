@@ -65,6 +65,8 @@ int main()
     //Initialisation de Ball
     balle.CreaBall();
 
+
+
     sf::Color Anemo(116, 194, 168, 255);
     sf::Color Electro(167, 86, 204, 255);
     sf::Color Pyro(239, 121, 56, 255);
@@ -225,6 +227,7 @@ int main()
             }
 
             window.clear();
+
             window.draw(Ball);
             window.draw(Paddle);
             if (brickVisible) {

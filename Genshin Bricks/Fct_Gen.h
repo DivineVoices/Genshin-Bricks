@@ -40,7 +40,7 @@ sf::Font FontInit(){
 
 //Enums
 enum Element {
-	Anemo = 1,
+	Anemo,
 	Electro,
 	Pyro,
 };

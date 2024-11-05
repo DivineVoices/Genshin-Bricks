@@ -24,6 +24,8 @@ public:
 	void SetGameState(GameState gamestate);
 	void RestartGame();
 	GameState GetGameState();
+	BallState GetBallState();
+	Ball GetBall();
 
 	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize);
 	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize);

@@ -23,6 +23,7 @@ public:
 	sf::CircleShape GetForm();
 	bool GetVis();
 	Vector2 GetStartPos();
+	BallState GetBallState();
 
 	//Sets
 	void SetPos(Vector2 V);

@@ -31,6 +31,9 @@ void Game::SetGameState(GameState gamestate) {
 GameState Game::GetGameState() {
     return m_gamestate;
 }
+BallState Game::GetBallState() {
+    return m_balle.GetBallState();
+}
 void Game::RestartGame() {
     m_balle.SetPos(m_balle.GetStartPos());
     m_balle.SetVit(Vector2(0.1f, 0.1f));
@@ -38,6 +41,9 @@ void Game::RestartGame() {
     m_balle.SetVisible(true);
     m_gamestate = Running;
     m_balle.SetBallState(Repositionning);
+}
+Ball Game::GetBall() {
+    return m_balle;
 }
 
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {

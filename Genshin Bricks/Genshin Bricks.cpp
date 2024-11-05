@@ -101,17 +101,18 @@ int main()
             }
         }
 
-        switch (gameState)
+        switch (game.GetGameState())
         {
         case Running:
-            switch (ballState)
+            switch (game.GetBallState())
             {
             case Flying:
                 balle.MoveBall(screen);
 
                 break;
             case Repositionning:
-                Ball.setPosition(mousePosition.x - balle.GetSize(), 730);
+                Ball balle = game.GetBall();
+                balle.SetPos(Vector2 (mousePosition.x - balle.GetSize(), 730));
                 break;
             }
 

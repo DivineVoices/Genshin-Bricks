@@ -53,3 +53,7 @@ void Ball::SetVit(Vector2 V) {
 void Ball::SetVisible(bool visible) {
 	m_visible = visible;
 }
+
+BallState Ball::GetBallState() {
+	return m_ballstate;
+}

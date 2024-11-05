@@ -172,8 +172,6 @@ int main()
                     // Move the ball just above the paddle to avoid hovering
                     vrballe.SetPos(Vector2 (vrballe.GetPos().m_x, vrpaddle.GetPos().m_y - balle.GetSize() * 2));
                     speed.m_y *= -1.0f; // Reverse y-speed
-                    sf::Color elementChange = Paddle.getFillColor();
-                    Ball.setFillColor(elementChange);
                 }
             }
 
@@ -189,7 +187,7 @@ int main()
                 if (Brick.getFillColor() == Electro)
                 {
                     if (electroSpeed == false) {
-                        if (vrballe.getFillColor() == Anemo)
+                        if (vrballe.GetEle() == Anemo)
                         {
                             electroSpeedEnhanced = true;
                             electroSpeed = true; // Activate electro speed

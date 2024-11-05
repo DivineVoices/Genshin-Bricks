@@ -11,7 +11,7 @@ class Ball {
 	sf::CircleShape m_forme;
 	bool m_visible;
 	BallState m_ballstate = Repositionning;
-
+	Element m_element = Anemo;
 	
 public:
 	//Constructeur
@@ -25,12 +25,14 @@ public:
 	bool GetVis();
 	Vector2 GetStartPos();
 	BallState GetBallState();
+	Element GetEle();
 
 	//Sets
 	void SetPos(Vector2 V);
 	void SetVit(Vector2 V);
 	void SetBallState(BallState ballstate);
 	void SetVisible(bool visible);
+	void SetElement(Element element);
 
 	//Fcts
 	void CreaBall();

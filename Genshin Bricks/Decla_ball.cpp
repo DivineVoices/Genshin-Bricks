@@ -57,3 +57,11 @@ void Ball::SetVisible(bool visible) {
 BallState Ball::GetBallState() {
 	return m_ballstate;
 }
+
+void Ball::SetElement(Element element) {
+	m_element = element;
+}
+
+Element Ball::GetEle() {
+	return m_element;
+}

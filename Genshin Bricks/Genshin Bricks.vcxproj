@@ -162,6 +162,7 @@
     <ClCompile Include="Decla_Game.cpp" />
     <ClCompile Include="Decla_Paddle.cpp" />
     <ClCompile Include="Decla_Screen.cpp" />
+    <ClCompile Include="Fct_Gen.cpp" />
     <ClCompile Include="Genshin Bricks.cpp" />
   </ItemGroup>
   <ItemGroup>

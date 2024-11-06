@@ -21,8 +21,7 @@ BallState Game::GetBallState() {
 void Game::SetGameState(GameState gamestate) {
     m_gamestate = gamestate;
 }
-void Game::UpdateGame(Screen screen, Ball balle, Paddle paddle) {
-    m_screen = screen;
+void Game::UpdateGame(Ball balle, Paddle paddle) {
     m_balle = balle;
     m_paddle = paddle;
 }
@@ -66,9 +65,8 @@ void Game::Death() {
 void Game::ChangeElement() {
     m_balle.SetElement(m_paddle.GetEle());
 }
-sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font) {
+sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize, const sf::Font& font) {
     sf::Text text;
-
     text.setFont(font);
     text.setString("The abyss claims all.");
     text.setCharacterSize(20);
@@ -77,7 +75,8 @@ sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font
 
     return text;
 }
-sf::Text Game::TextGameWin(sf::Color couleur, Vector2 windowSize, sf::Font font) {
+
+sf::Text Game::TextGameWin(sf::Color couleur, Vector2 windowSize, const sf::Font& font){
     sf::Text text;
 
     text.setFont(font);

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <sstream>
+#include <vector>
 #include <string>
 #include <random>
 #include <SFML/Graphics.hpp>
@@ -41,6 +42,7 @@ enum GameState {
 	GameOver,
 	GameWin,
 };
+
 
 enum BallState {
 	Repositionning,

@@ -1,7 +1,18 @@
-﻿  Decla_Game.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(15,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Decla_Game.cpp')
-  
-  Genshin Bricks.vcxproj -> C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
-  'pwsh.exe' n'est pas reconnu en tant que commande interne
-  ou externe, un programme exécutable ou un fichier de commandes.
+﻿  Genshin Bricks.cpp
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(16,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(24,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(24,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(49,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(50,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(181,119): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(182,108): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(256,38): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  Genshin Bricks.vcxproj -> C:\Users\ttaaddi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe

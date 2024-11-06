@@ -17,7 +17,7 @@ class Game {
 public:
 	//Constructeur
 	Game(Screen screen, Ball balle, Paddle paddle) : m_screen(screen), m_balle(balle), m_paddle(paddle) {};
-
+	sf::Font font;
 	//Gets
 	Ball GetBall();
 	Paddle GetPaddle();
@@ -27,7 +27,7 @@ public:
 
 	//Sets
 	void SetGameState(GameState gamestate);
-	void UpdateGame(Screen screen, Ball balle, Paddle paddle);
+	void UpdateGame(Ball balle, Paddle paddle);
 
 	//Fcts
     void Init();
@@ -35,6 +35,6 @@ public:
 	void RestartGame();
 	void Death();
 	void ChangeElement();
-	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font);
-	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize, sf::Font font);
+	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize, const sf::Font& font);
+	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize, const sf::Font& font);
 };

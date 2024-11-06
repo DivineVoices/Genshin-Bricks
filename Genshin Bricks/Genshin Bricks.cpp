@@ -32,7 +32,6 @@ int main()
     sf::RectangleShape Brick(sf::Vector2f(brickSize.m_x, brickSize.m_y));
 
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
-    Vector2 speed(0.1f, 0.1f);
     sf::Time electroDuration;
     bool electroSpeed = false;
     bool brickVisible = true;
@@ -156,13 +155,11 @@ int main()
                 if (electroDuration.asSeconds() >= 3) {
                     if (electroSpeedEnhanced == 1) {
                         electroSpeed = false; // Reset the speed flag
-                        speed.m_x /= 2.0f;      // Reset speed to normal
-                        speed.m_y /= 2.0f;      // Reset speed to normal
+                        vrballe.SetVit((vrballe.GetVit().m_x / 2.0f, vrballe.GetVit().m_y / 2.0f));      // Reset speed to normal
                     }
                     else {
                         electroSpeed = false; // Reset the speed flag
-                        speed.m_x /= 1.5f;      // Reset speed to normal
-                        speed.m_y /= 1.5f;
+                        vrballe.SetVit((vrballe.GetVit().m_x / 1.5f, vrballe.GetVit().m_y / 1.5f));      // Reset speed to normal
                     }
                 }
             }
@@ -173,13 +170,13 @@ int main()
                 if (vrballe.GetPos().m_y + balle.GetSize() * 2 >= vrpaddle.GetPos().m_y) {
                     // Move the ball just above the paddle to avoid hovering
                     vrballe.SetPos(Vector2 (vrballe.GetPos().m_x, vrpaddle.GetPos().m_y - balle.GetSize() * 2));
-                    speed.m_y *= -1.0f; // Reverse y-speed
+                    vrballe.SetVit((vrballe.GetVit().m_x, vrballe.GetVit().m_y * -1.0f)); // Reverse y-speed
                 }
             }
 
             if (brickBox.intersects(ballBox) && brickVisible) {
                 brickVisible = false;
-                speed.m_y *= -1.0f;
+                vrballe.SetVit((vrballe.GetVit().m_x, vrballe.GetVit().m_y * -1.0f));
                 //if wincon est une commande temporaire pour faire fonctionner le code, pour l'instant j'ai pas une bonne place pour la wincon alors elle est la comme example
                 if (winCon) 
                 {
@@ -193,16 +190,14 @@ int main()
                         {
                             electroSpeedEnhanced = true;
                             electroSpeed = true; // Activate electro speed
-                            speed.m_x *= 2.0f;     // Double the speed
-                            speed.m_y *= 2.0f;     // Double the speed
+                            vrballe.SetVit((vrballe.GetVit().m_x * 2.0f, vrballe.GetVit().m_y * 2.0f));
                             gameClock.restart();  // Restart the game clock to track this effect duration
                         }
                         else
                         {
                             electroSpeedEnhanced = false;
                             electroSpeed = true; // Activate electro speed
-                            speed.m_x *= 1.5f;     // Double the speed
-                            speed.m_y *= 1.5f;     // Double the speed
+                            vrballe.SetVit((vrballe.GetVit().m_x * 1.5f, vrballe.GetVit().m_y * 1.5f));
                             gameClock.restart();
                         }
                     }

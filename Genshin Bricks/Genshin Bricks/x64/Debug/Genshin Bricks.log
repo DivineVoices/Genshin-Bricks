@@ -1,40 +1,15 @@
-﻿  Decla_ball.cpp
-  Decla_block.cpp
-  Decla_Game.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(13,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Decla_Game.cpp')
-  
-  Decla_Paddle.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(13,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Decla_Paddle.cpp')
-  
-  Decla_Screen.cpp
-  Genshin Bricks.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(13,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Genshin%20Bricks.cpp')
-  
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         with
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         [
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:             T=int
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         ]
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         with
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         [
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:             T=int
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         ]
-  Génération de code en cours...
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Fct_Gen.h(37,1): warning C4715: 'FontInit' : les chemins de contrôle ne retournent pas tous une valeur
-Decla_block.obj : error LNK2005: "class sf::Font __cdecl FontInit(void)" (?FontInit@@YA?AVFont@sf@@XZ) déjà défini(e) dans Decla_ball.obj
-Decla_Game.obj : error LNK2005: "class sf::Font __cdecl FontInit(void)" (?FontInit@@YA?AVFont@sf@@XZ) déjà défini(e) dans Decla_ball.obj
-Decla_Paddle.obj : error LNK2005: "class sf::Font __cdecl FontInit(void)" (?FontInit@@YA?AVFont@sf@@XZ) déjà défini(e) dans Decla_ball.obj
-Decla_Screen.obj : error LNK2005: "class sf::Font __cdecl FontInit(void)" (?FontInit@@YA?AVFont@sf@@XZ) déjà défini(e) dans Decla_ball.obj
-Genshin Bricks.obj : error LNK2005: "class sf::Font __cdecl FontInit(void)" (?FontInit@@YA?AVFont@sf@@XZ) déjà défini(e) dans Decla_ball.obj
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe : fatal error LNK1169: un ou plusieurs symboles définis à différentes reprises ont été rencontrés
+﻿  Genshin Bricks.cpp
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(15,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(183,119): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(184,108): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
+          with
+          [
+              T=int
+          ]
+  Genshin Bricks.vcxproj -> C:\Users\dpereme\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe

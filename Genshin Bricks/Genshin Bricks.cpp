@@ -12,7 +12,41 @@ int main()
     settings.antialiasingLevel = 8;
     Vector2 windowSize = game.GetScreenSize();
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
-    sf::Font font = FontInit();
+    sf::Font font;
+    if (!font.loadFromFile("zh-cn.ttf")) {
+        std::cerr << "Error loading font\n";
+    }
+    sf::SoundBuffer AnemoBrick;
+    if (!AnemoBrick.loadFromFile("Anemo_Brick.wav")) {
+        return -1;
+    }
+
+
+    sf::SoundBuffer ElectroBrick;
+    if (!ElectroBrick.loadFromFile("Electro_Brick.wav")) {
+        return -1;
+    }
+
+    sf::SoundBuffer PyroBrick;
+    if (!PyroBrick.loadFromFile("Pyro_Brick.wav")) {
+        return -1;
+    }
+
+
+    sf::SoundBuffer PaddleHit;
+    if (!PaddleHit.loadFromFile("Paddle_Hit.wav")) {
+        return -1;
+    }
+
+    sf::SoundBuffer WallHit;
+    if (!WallHit.loadFromFile("Wall_Hit.wav")) {
+        return -1;
+    }
+
+    sf::Music music;
+    if (!music.openFromFile("Knights_Of_Fav.wav"))
+        return -1; // error
+    music.play();
     
     //Init couleurs
     sf::Color colorAnemo(116, 194, 168, 255);
@@ -38,6 +72,9 @@ int main()
     Brick.setFillColor(colorElectro);
     window.setKeyRepeatEnabled(false);
     sf::Text text;
+    sf::Sound BrickSound;
+    sf::Sound PaddleSound;
+    sf::Sound BallSound;
 
     //Démarrage
     game.SetGameState(Running);
@@ -45,8 +82,12 @@ int main()
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
+        if (music.getStatus() != sf::Music::Status::Playing)
+            music.play();
+        
         Ball vrballe = game.GetBall();
         Paddle vrpaddle = game.GetPaddle();
+        vrballe.SetBallState(Flying);
 
         sf::CircleShape forballebox = vrballe.GetForm();
         sf::RectangleShape forpaddlebox = vrpaddle.GetForm();
@@ -110,10 +151,12 @@ int main()
             case Flying:
 
                 balle.MoveBall(screen);
+                std::cout << "Je Bouge";
 
                 break;
             case Repositionning:
                 
+                std::cout << "Je Bouge PAS";
                 vrballe.SetPos(Vector2 (mousePosition.x - vrballe.GetSize(), 730));
                 break;
             }
@@ -152,13 +195,11 @@ int main()
                 if (electroDuration.asSeconds() >= 3) {
                     if (electroSpeedEnhanced == 1) {
                         electroSpeed = false; // Reset the speed flag
-                        speed.m_x /= 2.0f;      // Reset speed to normal
-                        speed.m_y /= 2.0f;      // Reset speed to normal
+                        vrballe.SetVit(Vector2 (vrballe.GetVit().m_x/2.0f, vrballe.GetVit().m_y / 2.0f));      // Reset speed to normal
                     }
                     else {
                         electroSpeed = false; // Reset the speed flag
-                        speed.m_x /= 1.5f;      // Reset speed to normal
-                        speed.m_y /= 1.5f;
+                        vrballe.SetVit(Vector2(vrballe.GetVit().m_x / 1.5f, vrballe.GetVit().m_y / 1.5f));
                     }
                 }
             }
@@ -207,13 +248,13 @@ int main()
             break;
         case GameOver:
             window.clear();
-            window.draw(game.TextGameOver(colorElectro,windowSize));
+            window.draw(game.TextGameOver(colorElectro,windowSize,font));
             window.display();
             break;
 
         case GameWin:
             window.clear();
-            window.draw(game.TextGameOver(colorAnemo, windowSize));
+            window.draw(game.TextGameOver(colorAnemo, windowSize,font));
             window.display();
             break;
         }

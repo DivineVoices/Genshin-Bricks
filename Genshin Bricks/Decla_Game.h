@@ -27,6 +27,7 @@ public:
 
 	//Sets
 	void SetGameState(GameState gamestate);
+	void UpdateGame(Screen screen, Ball balle, Paddle paddle);
 
 	//Fcts
     void Init();

@@ -21,6 +21,11 @@ BallState Game::GetBallState() {
 void Game::SetGameState(GameState gamestate) {
     m_gamestate = gamestate;
 }
+void Game::UpdateGame(Screen screen, Ball balle, Paddle paddle) {
+    m_screen = screen;
+    m_balle = balle;
+    m_paddle = paddle;
+}
 
 //Fcts
 void Game::Init() {

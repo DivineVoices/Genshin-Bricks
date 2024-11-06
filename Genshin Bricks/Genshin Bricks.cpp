@@ -2,10 +2,6 @@
 
 int main() 
 {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<> alea(0.3, 0.7);
-
     //A ne pas toucher
     Screen screen;
     Ball balle;
@@ -52,7 +48,9 @@ int main()
     while (window.isOpen())
     {
         Ball vrballe = game.GetBall();
+        vrballe.CreaBall();
         Paddle vrpaddle = game.GetPaddle();
+        vrpaddle.CreaPad();
 
         sf::CircleShape forballebox = vrballe.GetForm();
         sf::RectangleShape forpaddlebox = vrpaddle.GetForm();
@@ -75,7 +73,7 @@ int main()
                 }
                 if (event.mouseButton.button == sf::Mouse::Right)
                 {
-                    balle.SetBallState(Flying);
+                    vrballe.SetBallState(Flying);
                 }
             }
             if (event.type == sf::Event::KeyPressed)
@@ -115,7 +113,7 @@ int main()
             {
             case Flying:
 
-                balle.MoveBall(screen);
+                vrballe.MoveBall(screen);
 
                 break;
             case Repositionning:
@@ -223,6 +221,7 @@ int main()
             window.display();
             break;
         }
+        game.UpdateGame(screen, vrballe, vrpaddle);
     }
     return 0;
 }

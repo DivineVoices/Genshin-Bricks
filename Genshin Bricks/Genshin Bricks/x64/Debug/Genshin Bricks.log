@@ -2,30 +2,6 @@
 C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(15,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
   (compiler le fichier source 'Decla_Game.cpp')
   
-  Decla_Paddle.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(15,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Decla_Paddle.cpp')
-  
-  Decla_Screen.cpp
-  Decla_ball.cpp
-  Decla_block.cpp
-  Genshin Bricks.cpp
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Decla_Paddle.h(15,8): warning C4244: 'argument' : conversion de 'int' en 'float', perte possible de données
-  (compiler le fichier source 'Genshin%20Bricks.cpp')
-  
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,69): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(14,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         with
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         [
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:             T=int
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(142,119): warning C4244:         ]
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244: '=' : conversion de 'float' en 'T', perte possible de données
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         with
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         [
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:             T=int
-C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(143,108): warning C4244:         ]
-  Génération de code en cours...
   Genshin Bricks.vcxproj -> C:\Users\ewand\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.

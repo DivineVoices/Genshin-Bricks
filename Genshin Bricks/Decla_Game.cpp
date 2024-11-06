@@ -40,7 +40,7 @@ void Game::LeftClick() {
         break;
     case Running:
         m_paddle.SwitchEle();
-
+        break;
     case GameOver:
         std::cout << "GameOver left click registered" << std::endl;
         break;
@@ -60,7 +60,6 @@ void Game::RestartGame() {
 }
 void Game::Death() {
     m_paddle.SetLife(-1);
-    std::cout << m_paddle.GetLife() << std::endl;
     m_balle.SetBallState(Repositionning);
 }
 void Game::ChangeElement(sf::Color elestorage[]) {

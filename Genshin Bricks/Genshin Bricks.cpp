@@ -95,7 +95,8 @@ int main()
 
     float brickWidth = 60.0f;
     float brickHeight = 30.0f;
-    float padding = 10.0f;
+    float paddingx = 10.0f;
+    float paddingy = 40.f;
 
     vector<string> layout = {
         "aeaeappe",
@@ -115,7 +116,7 @@ int main()
         for (int col = 0; col < cols; ++col) {
             char brickType = layout[row][col];
             if (brickType == '-') continue;
-            Vector2 position((brickWidth + padding) * col, (brickHeight + padding) * row);
+            Vector2 position((brickWidth + paddingx) * col + 20, (brickHeight + paddingy) * row);
             Brick brick;
             sf::Color element = (row % 2 == 0) ? Electro : Anemo;
             brick.init(element, position, Vector2(brickWidth, brickHeight));
@@ -139,6 +140,7 @@ int main()
     sf::Time electroDuration;
     bool electroSpeed = false;
     bool electroSpeedEnhanced = false;
+    int bricksPerRow = 8;
     Ball.setFillColor(Anemo);
     Ball.setPosition(ballPos.x, ballPos.y);
     Paddle.setPosition(250, 750);  // Centrer la raquette
@@ -273,27 +275,34 @@ int main()
                 if (brick.Element == Pyro && Ball.getFillColor() == Pyro) 
                 {
                     brick.is_visible = false;
-                    if (i - cols >= 0 && bricks[i - 8].is_visible) bricks[i - 8].is_visible = false;
+                    if (i>cols) bricks[i - 8].is_visible = false;
                     if (i - 1 >= 0 && bricks[i - 1].is_visible) bricks[i - 1].is_visible = false;
                     if (i + 1 >= 0 && bricks[i + 1].is_visible) bricks[i + 1].is_visible = false;
                 }
                 if ((brick.Element == Pyro && Ball.getFillColor() == Anemo) || (brick.Element == Anemo && Ball.getFillColor() == Pyro)) 
                 {
                     brick.is_visible = false;
-                    if (i-8 >= 0 && bricks[i-8].is_visible) bricks[i-8].is_visible = false;
-                    if (i-1 >= 0 && bricks[i-1].is_visible) bricks[i-1].is_visible = false;
-                    if (i+1 >= 0 && bricks[i+1].is_visible) bricks[i+1].is_visible = false;
-                    if (i + 2 >= 0 && bricks[i + 2].is_visible) bricks[i + 2].is_visible = false;
-                    if (i - 2 >= 0 && bricks[i - 2].is_visible) bricks[i - 2].is_visible = false;
-                    if (i - 16 >= 0 && bricks[i - 16].is_visible) bricks[i - 16].is_visible = false;
+                    if (i>8) bricks[i - 8].is_visible = false;
 
+                    if (i - 1 >= 0 && i / bricksPerRow == (i - 1) / bricksPerRow)
+                        bricks[i - 1].is_visible = false;
+
+                    if (i + 1 < bricks.size() && i / bricksPerRow == (i + 1) / bricksPerRow)
+                        bricks[i + 1].is_visible = false;
+
+                    if (i - 2 >= 0 && i / bricksPerRow == (i - 2) / bricksPerRow)
+                        bricks[i - 2].is_visible = false;
+
+                    if (i + 2 < bricks.size() && i / bricksPerRow == (i + 2) / bricksPerRow)
+                        bricks[i + 2].is_visible = false;
+                    if (i > 16) bricks[i - 16].is_visible = false;
                 }
                 else {
                     brick.is_visible = false;
                 }
 
 
-                break;  // Ne vérifier qu'une seule collision par frame
+                break; 
             }
         }
     }

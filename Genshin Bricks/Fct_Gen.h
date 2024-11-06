@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <random>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 
@@ -26,17 +27,6 @@ struct Vector2 {
 		return Vector2(m_x * i, m_y * i);
 	}
 };
-
-//Fonts
-sf::Font FontInit(){
-	sf::Font font;
-	if (!font.loadFromFile("zh-cn.ttf")) {
-		std::cerr << "Error loading font\n";
-	}
-	else {
-		return font;
-	}
-}
 
 //Enums
 enum Element {

@@ -5,6 +5,30 @@
     {
       "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Genshin Bricks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Decla_Game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Decla_Game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Decla_ball.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Decla_block.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Fct_Gen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Fct_Gen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Decla_Paddle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +38,86 @@
       "DocumentGroups": [
         {
           "DockedWidth": 115,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Decla_Game.cpp",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.cpp",
+              "RelativeDocumentMoniker": "Decla_Game.cpp",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.cpp",
+              "RelativeToolTip": "Decla_Game.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-06T13:41:43.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Decla_Paddle.h",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Paddle.h",
+              "RelativeDocumentMoniker": "Decla_Paddle.h",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Paddle.h",
+              "RelativeToolTip": "Decla_Paddle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T10:52:32.049Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Decla_Game.h",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.h",
+              "RelativeDocumentMoniker": "Decla_Game.h",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_Game.h",
+              "RelativeToolTip": "Decla_Game.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T10:44:16.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Decla_ball.h",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_ball.h",
+              "RelativeDocumentMoniker": "Decla_ball.h",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_ball.h",
+              "RelativeToolTip": "Decla_ball.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T10:43:25.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Decla_block.h",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.h",
+              "RelativeDocumentMoniker": "Decla_block.h",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Decla_block.h",
+              "RelativeToolTip": "Decla_block.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T10:42:51.132Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Fct_Gen.h",
+              "DocumentMoniker": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Fct_Gen.h",
+              "RelativeDocumentMoniker": "Fct_Gen.h",
+              "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Fct_Gen.h",
+              "RelativeToolTip": "Fct_Gen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-05T10:42:21.238Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,7 +126,7 @@
               "RelativeDocumentMoniker": "Genshin Bricks.cpp",
               "ToolTip": "C:\\Users\\ewand\\Documents\\GitHub\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
               "RelativeToolTip": "Genshin Bricks.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAMAAAAAAAAAAAAAAANMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-28T07:16:55.428Z",
               "EditorCaption": ""

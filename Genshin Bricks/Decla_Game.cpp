@@ -61,9 +61,8 @@ void Game::Death() {
 void Game::ChangeElement() {
     m_balle.SetElement(m_paddle.GetEle());
 }
-sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
+sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font) {
     sf::Text text;
-    sf::Font font = FontInit();
 
     text.setFont(font);
     text.setString("The abyss claims all.");
@@ -73,9 +72,8 @@ sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize) {
 
     return text;
 }
-sf::Text Game::TextGameWin(sf::Color couleur, Vector2 windowSize) {
+sf::Text Game::TextGameWin(sf::Color couleur, Vector2 windowSize, sf::Font font) {
     sf::Text text;
-    sf::Font font = FontInit();
 
     text.setFont(font);
     text.setString("Let the wind guide you!");

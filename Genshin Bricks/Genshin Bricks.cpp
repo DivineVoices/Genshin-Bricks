@@ -2,6 +2,10 @@
 
 int main() 
 {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> alea(0.3, 0.7);
+
     //A ne pas toucher
     Screen screen;
     Ball balle;
@@ -12,7 +16,10 @@ int main()
     settings.antialiasingLevel = 8;
     Vector2 windowSize = game.GetScreenSize();
     sf::RenderWindow window(sf::VideoMode(windowSize.m_x, windowSize.m_y), "Genshin Bricks", sf::Style::Default, settings);
-    sf::Font font = FontInit();
+    sf::Font font;
+    if (!font.loadFromFile("zh-cn.ttf")) {
+        std::cerr << "Error loading font\n";
+    }
     
     //Init couleurs
     sf::Color colorAnemo(116, 194, 168, 255);
@@ -37,7 +44,6 @@ int main()
     bool winCon = false;
     Brick.setFillColor(colorElectro);
     window.setKeyRepeatEnabled(false);
-    sf::Text text;
 
     //Démarrage
     game.SetGameState(Running);
@@ -207,13 +213,13 @@ int main()
             break;
         case GameOver:
             window.clear();
-            window.draw(game.TextGameOver(colorElectro,windowSize));
+            window.draw(game.TextGameOver(colorElectro,windowSize,font));
             window.display();
             break;
 
         case GameWin:
             window.clear();
-            window.draw(game.TextGameOver(colorAnemo, windowSize));
+            window.draw(game.TextGameOver(colorAnemo, windowSize,font));
             window.display();
             break;
         }

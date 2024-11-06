@@ -34,7 +34,7 @@ public:
 	void LeftClick();
 	void RestartGame();
 	void Death();
-	void ChangeElement();
+	void ChangeElement(sf::Color elestorage[]);
 	sf::Text TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font);
 	sf::Text TextGameWin(sf::Color couleur, Vector2 windowSize, sf::Font font);
 };

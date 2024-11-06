@@ -63,8 +63,17 @@ void Game::Death() {
     std::cout << m_paddle.GetLife() << std::endl;
     m_balle.SetBallState(Repositionning);
 }
-void Game::ChangeElement() {
+void Game::ChangeElement(sf::Color elestorage[]) {
     m_balle.SetElement(m_paddle.GetEle());
+    if (m_balle.GetEle() == Anemo) {
+        m_balle.GetForm().setFillColor(elestorage[0]);
+    }
+    else if (m_balle.GetEle() == Electro) {
+        m_balle.GetForm().setFillColor(elestorage[1]);
+    }
+    else {
+        m_balle.GetForm().setFillColor(elestorage[2]);
+    }
 }
 sf::Text Game::TextGameOver(sf::Color couleur, Vector2 windowSize, sf::Font font) {
     sf::Text text;

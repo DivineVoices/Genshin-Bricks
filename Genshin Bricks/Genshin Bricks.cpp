@@ -130,7 +130,7 @@ int main()
             window.display();
 
 
-            if (paddle.GetLife() <= 0)
+            if (vrpaddle.GetLife() <= 0)
             {
                 game.SetGameState(GameOver);
             }

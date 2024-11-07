@@ -1,10 +1,4 @@
-﻿  Genshin Bricks.cpp
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,71): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,57): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(155,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(156,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(454,46): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: void __cdecl sf::SoundSource::setVolume(float)" (__imp_?setVolume@SoundSource@sf@@QEAAXM@Z)
+﻿Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: void __cdecl sf::SoundSource::setVolume(float)" (__imp_?setVolume@SoundSource@sf@@QEAAXM@Z)
 Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: bool __cdecl sf::SoundBuffer::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@SoundBuffer@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
     Conseil sur les symboles définis et susceptibles de correspondre :
       "__declspec(dllimport) public: bool __cdecl sf::Font::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@Font@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)

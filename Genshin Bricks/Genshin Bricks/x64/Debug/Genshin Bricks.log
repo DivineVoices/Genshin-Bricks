@@ -1,9 +1,9 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,71): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,57): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(163,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(164,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(481,46): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,67): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,53): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(163,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(164,14): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(481,42): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
   Genshin Bricks.vcxproj -> C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
   'pwsh.exe' n'est pas reconnu en tant que commande interne
   ou externe, un programme exécutable ou un fichier de commandes.

@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|C:\\Users\\mtaha\\Documents\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D9ECE486-14DA-4694-84C5-AB2E6A0FA201}|Genshin Bricks.vcxproj|solutionrelative:Genshin Bricks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\dpereme\\Desktop\\SFML-2.6.1\\include\\SFML\\Graphics\\Glyph.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,20 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Glyph.hpp",
-              "DocumentMoniker": "C:\\Users\\dpereme\\Desktop\\SFML-2.6.1\\include\\SFML\\Graphics\\Glyph.hpp",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\dpereme\\Desktop\\SFML-2.6.1\\include\\SFML\\Graphics\\Glyph.hpp",
-              "ToolTip": "C:\\Users\\dpereme\\Desktop\\SFML-2.6.1\\include\\SFML\\Graphics\\Glyph.hpp",
-              "RelativeToolTip": "..\\..\\..\\..\\dpereme\\Desktop\\SFML-2.6.1\\include\\SFML\\Graphics\\Glyph.hpp",
-              "ViewState": "AgIAABwAAAAAAAAAAAASwDcAAABiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-28T07:37:50.443Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -39,7 +24,7 @@
               "RelativeDocumentMoniker": "Genshin Bricks.cpp",
               "ToolTip": "C:\\Users\\mtaha\\Documents\\Genshin-Bricks\\Genshin Bricks\\Genshin Bricks.cpp",
               "RelativeToolTip": "Genshin Bricks.cpp",
-              "ViewState": "AgIAABoBAAAAAAAAAAAAACABAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAkwNkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-28T07:16:55.428Z",
               "EditorCaption": ""

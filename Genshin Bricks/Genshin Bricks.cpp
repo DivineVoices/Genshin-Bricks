@@ -125,12 +125,22 @@ int main()
             return -1;
         }
 
+        sf::SoundBuffer GameOverLine;
+        if (!GameOverLine.loadFromFile("GameOverLine.wav")) {
+            return -1;
+        }
+
+        sf::SoundBuffer GameWinLine;
+        if (!GameWinLine.loadFromFile("GameWinLine.wav")) {
+            return -1;
+        }
+
         sf::Music music;
         if (!music.openFromFile("Knights_Of_Fav.wav"))
             return -1; // error
-        music.play();
 
 
+        float Volume = 10.f;
         float brickWidth = 60.0f;
         float brickHeight = 30.0f;
         float paddingx = 10.0f;
@@ -217,11 +227,16 @@ int main()
         sf::Sound BrickSound;
         sf::Sound PaddleSound;
         sf::Sound BallSound;
+        sf::Sound VoiceActing;
+
+        music.setVolume(10.0f);
+        music.play();
 
         while (window.isOpen())
         {
             if (music.getStatus() != sf::Music::Status::Playing)
                 music.play();
+            music.setVolume(10);
             deltaTime = frameClock.restart();
             sf::FloatRect paddleBox = Paddle.getGlobalBounds();
             sf::FloatRect ballBox = Ball.getGlobalBounds();
@@ -351,6 +366,8 @@ int main()
                 // Déplacement de la balle
                 if (lives <= 0)
                 {
+                    VoiceActing.setBuffer(GameOverLine);
+                    VoiceActing.play();
                     gameState = GameOver;
                 }
 
@@ -512,6 +529,7 @@ int main()
             }
             case GameOver:
                 // Display "The abyss claims all." only in GameOver state
+
                 text.setFont(font);
                 text.setString("The abyss claims all.");
                 text.setCharacterSize(20);
@@ -526,6 +544,8 @@ int main()
 
             case GameWin:
                 // Display "Let the wind guide you!" only in GameWin state
+                VoiceActing.setBuffer(GameWinLine);
+                VoiceActing.play();
                 text.setFont(font);
                 text.setString("Let the wind guide you!");
                 text.setCharacterSize(20);

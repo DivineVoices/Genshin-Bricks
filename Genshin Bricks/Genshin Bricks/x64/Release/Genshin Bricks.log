@@ -1,0 +1,17 @@
+﻿Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: void __cdecl sf::SoundSource::setVolume(float)" (__imp_?setVolume@SoundSource@sf@@QEAAXM@Z)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: bool __cdecl sf::SoundBuffer::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@SoundBuffer@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+    Conseil sur les symboles définis et susceptibles de correspondre :
+      "__declspec(dllimport) public: bool __cdecl sf::Font::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?loadFromFile@Font@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+      "__declspec(dllimport) public: bool __cdecl sf::Texture::loadFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &,class sf::Rect<int> const &)" (__imp_?loadFromFile@Texture@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$Rect@H@2@@Z)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: __cdecl sf::SoundBuffer::~SoundBuffer(void)" (__imp_??1SoundBuffer@sf@@QEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: __cdecl sf::SoundBuffer::SoundBuffer(void)" (__imp_??0SoundBuffer@sf@@QEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: void __cdecl sf::Sound::setBuffer(class sf::SoundBuffer const &)" (__imp_?setBuffer@Sound@sf@@QEAAXAEBVSoundBuffer@2@@Z)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: virtual void __cdecl sf::Sound::play(void)" (__imp_?play@Sound@sf@@UEAAXXZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: virtual __cdecl sf::Sound::~Sound(void)" (__imp_??1Sound@sf@@UEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: __cdecl sf::Sound::Sound(void)" (__imp_??0Sound@sf@@QEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: bool __cdecl sf::Music::openFromFile(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const &)" (__imp_?openFromFile@Music@sf@@QEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: virtual __cdecl sf::Music::~Music(void)" (__imp_??1Music@sf@@UEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: __cdecl sf::Music::Music(void)" (__imp_??0Music@sf@@QEAA@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: virtual enum sf::SoundSource::Status __cdecl sf::SoundStream::getStatus(void)const " (__imp_?getStatus@SoundStream@sf@@UEBA?AW4Status@SoundSource@2@XZ)
+Genshin Bricks.obj : error LNK2001: symbole externe non résolu "__declspec(dllimport) public: virtual void __cdecl sf::SoundStream::play(void)" (__imp_?play@SoundStream@sf@@UEAAXXZ)
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\x64\Release\Genshin Bricks.exe : fatal error LNK1120: 13 externes non résolus

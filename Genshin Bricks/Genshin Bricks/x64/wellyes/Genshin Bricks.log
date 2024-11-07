@@ -1,0 +1,2 @@
+﻿  Genshin Bricks.cpp
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(4,10): error C1083: Impossible d'ouvrir le fichier include : 'SFML/Graphics.hpp' : No such file or directory

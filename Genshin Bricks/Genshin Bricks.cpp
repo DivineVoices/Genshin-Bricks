@@ -59,7 +59,7 @@ int main()
     int ballSize(10);
 
     //Création de balles
-    Ball balle(ballSize, (300, 400), Vector2(0.1f, 0.1f), 1);
+    Ball balle(ballSize, (300, 400), Vector2(500.0f, 500.0f), 1);
 
 
     //Initialisation de Ball
@@ -98,7 +98,7 @@ int main()
     sf::RectangleShape Brick(sf::Vector2f(brickSize.m_x, brickSize.m_y));
     sf::Vector2i mousePosition = sf::Mouse::getPosition();
     Vector2 ballStartPos(300, 400);
-    Vector2 speed(0.1f, 0.1f);
+    Vector2 speed(500.0f, 500.0f);
     sf::Time electroDuration;
     bool electroSpeed = false;
     bool brickVisible = true;
@@ -106,11 +106,12 @@ int main()
     bool winCon = false;
     Ball.setFillColor(Anemo);
     Paddle.setFillColor(Anemo);
-    Brick.setFillColor(Pyro);
+    Brick.setFillColor(Anemo);
     Ball.setPosition(ballStartPos.m_x, ballStartPos.m_y);
     Paddle.setPosition(0, 750);
     window.setKeyRepeatEnabled(false);
     sf::Text text;
+    sf::Time deltaTime;
 
     sf::Sound BrickSound;
     sf::Sound PaddleSound;
@@ -120,6 +121,8 @@ int main()
     //Evenements a ne pas toucher
     while (window.isOpen())
     {
+        sf::Clock frameClock;
+
         if (music.getStatus() != sf::Music::Status::Playing)
             music.play();
         sf::FloatRect paddleBox = Paddle.getGlobalBounds();
@@ -207,7 +210,9 @@ int main()
             switch (ballState)
             {
             case Flying:
-                Ball.move(speed.m_x, speed.m_y);
+                std::cout << deltaTime.asSeconds() << std::endl;
+                Ball.move(speed.m_x * deltaTime.asSeconds(), speed.m_y * deltaTime.asSeconds());
+                deltaTime = frameClock.restart();
 
                 if ((Ball.getPosition().x >= (windowSize.m_x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) {
                     BallSound.setBuffer(WallHit);

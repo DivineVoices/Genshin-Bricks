@@ -1,5 +1,6 @@
 # Genshin-Bricks
 A Genshin based brick breaker with elemental reactions and juicyness
+
 Known bugs :
 - Speed issues with stacking anemo/electro bricks
 - Pyro bricks sometimes explode too far and crash the game

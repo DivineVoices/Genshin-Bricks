@@ -69,13 +69,13 @@ sf::Texture Brick::pyroTexture;
 
 bool checkWinCondition(const vector<Brick>& bricks) {
     for (const auto& brick : bricks) {
+        std::cout << "Brick visibility: " << brick.is_visible << std::endl;
         if (brick.is_visible) {
-            return false; // At least one brick is still visible, so the game is not won
+            return false;
         }
     }
-    return true; // All bricks are invisible, the player has won
+    return true;
 }
-
 int getBrickIndex(int row, int col, int rows, int cols) {
     if (row < 0 || row >= rows || col < 0 || col >= cols) return -1; // Hors limites
     return row * cols + col;
@@ -86,7 +86,6 @@ int main()
 { 
         sf::ContextSettings settings;
         settings.antialiasingLevel = 8;
-
         // Charger les textures pour les briques
         Brick::loadTextures();
         sf::Texture backgroundT;
@@ -104,43 +103,43 @@ int main()
         sf::Font font;
         if (!font.loadFromFile("zh-cn.ttf")) {
             std::cerr << "Error loading font\n";
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer AnemoBrick;
         if (!AnemoBrick.loadFromFile("Anemo_Brick.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer ElectroBrick;
         if (!ElectroBrick.loadFromFile("Electro_Brick.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer PyroBrick;
         if (!PyroBrick.loadFromFile("Pyro_Brick.wav")) {
-            return -1;
+            return -1; // error
         }
 
 
         sf::SoundBuffer PaddleHit;
         if (!PaddleHit.loadFromFile("Paddle_Hit.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer WallHit;
         if (!WallHit.loadFromFile("Wall_Hit.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer GameOverLine;
         if (!GameOverLine.loadFromFile("GameOverLine.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::SoundBuffer GameWinLine;
         if (!GameWinLine.loadFromFile("GameWinLine.wav")) {
-            return -1;
+            return -1; // error
         }
 
         sf::Music music;
@@ -155,11 +154,11 @@ int main()
         float paddingy = 40.f;
 
         vector<string> layout = {
-            "--------",
-            "a-e-e-p-",
-            "--------",
-            "a-e-e-p-",
-            "--------"
+            "aeaaeppa",
+            "apeaeepa",
+            "aepaepae",
+            "peaaeppa",
+            "eepaeapa"
         };
         int rows = layout.size();
         int cols = layout[0].size();
@@ -287,28 +286,47 @@ int main()
                             std::cout << "Running R registered" << std::endl;
                             break;
                         case GameOver:
-                            std::cout << "GameOver R registered" << std::endl;
+                            for (auto& brick : bricks) {
+                                brick.is_visible = true; // Set bricks to visible
+                                // You can also re-initialize other properties of the brick if needed (e.g., element type, sprite, etc.)
+                                // brick.init(brick.Element, brick.position, Vector2(brickWidth, brickHeight)); // if necessary
+                            }
                             Ball.setPosition(ballStartPos.x, ballStartPos.y); // Reset ball position
-                            speed = Vector2(500.0f, 500.0f);
-                            lives = 3;
-                            ballVisible = true;
-                            electroSpeed = false;
-                            electroSpeedEnhanced = false;
-                            gameState = Running;
-                            ballState = Reposition;
+                            speed = Vector2(500.0f, 500.0f); // Reset speed
+                            lives = 3; // Reset lives
+                            ballVisible = true; // Ball is visible again
+
+                            // Ensure all bricks are visible
+                            
+
+                            electroSpeed = false; // Reset electro speed power-up
+                            electroSpeedEnhanced = false; // Reset electro speed enhancement
+                            gameState = Running; // Set the game state to Running
+                            ballState = Reposition; // Set ball state to Reposition
                             break;
 
                         case GameWin:
                             std::cout << "GameWin R registered" << std::endl;
-                            Ball.setPosition(ballStartPos.x, ballStartPos.y); // Reset ball position
+                            for (auto& brick : bricks) {
+                                                            brick.is_visible = true;  // Reset visibility to true
+                                                            std::cout << "Brick reset: " << &brick << " Visibility: " << brick.is_visible << std::endl; // Debugging output
+                                                        }
+                            // Reset ball position
+                            Ball.setPosition(ballStartPos.x, ballStartPos.y);
                             speed = Vector2(500.0f, 500.0f);
                             lives = 3;
                             ballVisible = true;
+
+                            // Ensure bricks are fully reset
+                            
+
                             electroSpeed = false;
                             electroSpeedEnhanced = false;
                             gameState = Running;
                             ballState = Reposition;
                             break;
+                            // Reset Ball and other game properties
+                           
                         }
                     }
                 }
@@ -540,9 +558,6 @@ int main()
                 text.setCharacterSize(20);
                 text.setFillColor(Electro);
                 text.setPosition(screenSize.x / 2 - 100, screenSize.y / 2 - 25);
-                for (auto& brick : bricks) {
-                    brick.is_visible = true;
-                }
                 window.draw(text);
                 window.display();
                 break;
@@ -554,9 +569,6 @@ int main()
                 text.setCharacterSize(20);
                 text.setFillColor(Anemo);
                 text.setPosition(screenSize.x / 2 - 100, screenSize.y / 2 - 25);
-                for (auto& brick : bricks) {
-                    brick.is_visible = true;
-                }
                 window.draw(text);
                 window.display();
                 break;

@@ -99,6 +99,37 @@ int main()
             return -1;
         }
 
+        sf::SoundBuffer AnemoBrick;
+        if (!AnemoBrick.loadFromFile("Anemo_Brick.wav")) {
+            return -1;
+        }
+
+        sf::SoundBuffer ElectroBrick;
+        if (!ElectroBrick.loadFromFile("Electro_Brick.wav")) {
+            return -1;
+        }
+
+        sf::SoundBuffer PyroBrick;
+        if (!PyroBrick.loadFromFile("Pyro_Brick.wav")) {
+            return -1;
+        }
+
+
+        sf::SoundBuffer PaddleHit;
+        if (!PaddleHit.loadFromFile("Paddle_Hit.wav")) {
+            return -1;
+        }
+
+        sf::SoundBuffer WallHit;
+        if (!WallHit.loadFromFile("Wall_Hit.wav")) {
+            return -1;
+        }
+
+        sf::Music music;
+        if (!music.openFromFile("Knights_Of_Fav.wav"))
+            return -1; // error
+        music.play();
+
 
         float brickWidth = 60.0f;
         float brickHeight = 30.0f;
@@ -183,8 +214,14 @@ int main()
         sf::Clock frameClock;
         float newPaddlePosX = mousePosition.x - paddleSize / 2;
 
+        sf::Sound BrickSound;
+        sf::Sound PaddleSound;
+        sf::Sound BallSound;
+
         while (window.isOpen())
         {
+            if (music.getStatus() != sf::Music::Status::Playing)
+                music.play();
             deltaTime = frameClock.restart();
             sf::FloatRect paddleBox = Paddle.getGlobalBounds();
             sf::FloatRect ballBox = Ball.getGlobalBounds();
@@ -273,13 +310,13 @@ int main()
                     Ball.move(speed.x * deltaTime.asSeconds(), speed.y * deltaTime.asSeconds());
                     deltaTime = frameClock.restart();
                     if ((Ball.getPosition().x >= (screenSize.x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) {
-                        //BallSound.setBuffer(WallHit);
-                        //BallSound.play();
+                        BallSound.setBuffer(WallHit);
+                        BallSound.play();
                         speed.x *= -1.0f; // Reverse x speed on wall collision
                     }
                     if ((Ball.getPosition().y >= (screenSize.y - (ballSize * 2))) || (Ball.getPosition().y <= 0)) {
-                        //BallSound.setBuffer(WallHit);
-                        //BallSound.play();
+                        BallSound.setBuffer(WallHit);
+                        BallSound.play();
                         speed.y *= -1.0f; // Reverse y speed on wall collision
                     }
                     break;
@@ -349,9 +386,15 @@ int main()
                 }
                 if (paddleBox.intersects(ballBox))
                 {
-                    speed.y *= -1.0f;
-                    Ball.setFillColor(Paddle.getFillColor());
-                    Ball.setFillColor(eleStorage[eleSwitcher]);
+                    if (Ball.getPosition().y + ballSize * 2 >= Paddle.getPosition().y) {
+                        // Move the ball just above the paddle to avoid hovering
+                        PaddleSound.setBuffer(PaddleHit);
+                        PaddleSound.play();
+                        Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - ballSize * 2);
+                        speed.y *= -1.0f; // Reverse y-speed
+                        Ball.setFillColor(Paddle.getFillColor());
+                        Ball.setFillColor(eleStorage[eleSwitcher]);
+                    }
                 }
 
                 // Gérer les collisions balle-briques
@@ -361,6 +404,8 @@ int main()
                         speed.y *= -1.0f;
                         if (brick.Element == Electro)
                         {
+                            BrickSound.setBuffer(ElectroBrick);
+                            BrickSound.play();
                             if (electroSpeed == false) {
                                 if (Ball.getFillColor() == Anemo)
                                 {
@@ -384,7 +429,8 @@ int main()
 
                         if (brick.Element == Pyro)
                         {
-
+                            BrickSound.setBuffer(PyroBrick);
+                            BrickSound.play();
                             if (Ball.getFillColor() == Electro)
                             {
                                 // Rendre invisible la brique touchée et les briques adjacentes
@@ -427,6 +473,8 @@ int main()
 
                         if (brick.Element == Anemo)
                         {
+                            BrickSound.setBuffer(AnemoBrick);
+                            BrickSound.play();
                             if (Ball.getFillColor() == Electro)
                             {
                                 electroSpeedEnhanced = true;

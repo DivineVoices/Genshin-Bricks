@@ -5,6 +5,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Window/Mouse.hpp>
 #include <SFML/Audio.hpp>
+#include <random>
 
 using namespace std;
 
@@ -78,7 +79,9 @@ int main()
 { 
         sf::ContextSettings settings;
         settings.antialiasingLevel = 8;
-
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        std::uniform_real_distribution<> dis(0.0, 1.0);
         // Charger les textures pour les briques
         Brick::loadTextures();
         sf::Texture backgroundT;
@@ -324,12 +327,12 @@ int main()
                 case Flying:
                     Ball.move(speed.x * deltaTime.asSeconds(), speed.y * deltaTime.asSeconds());
                     deltaTime = frameClock.restart();
-                    if ((Ball.getPosition().x >= (screenSize.x - (ballSize * 2))) || (Ball.getPosition().x <= 0)) {
+                    if ((Ball.getPosition().x >= (screenSize.x - ballSize)) || (Ball.getPosition().x <= 0)) {
                         BallSound.setBuffer(WallHit);
                         BallSound.play();
                         speed.x *= -1.0f; // Reverse x speed on wall collision
                     }
-                    if ((Ball.getPosition().y >= (screenSize.y - (ballSize * 2))) || (Ball.getPosition().y <= 0)) {
+                    if ((Ball.getPosition().y >= (screenSize.y - ballSize)) || (Ball.getPosition().y <= 0)) {
                         BallSound.setBuffer(WallHit);
                         BallSound.play();
                         speed.y *= -1.0f; // Reverse y speed on wall collision
@@ -404,10 +407,22 @@ int main()
                 if (paddleBox.intersects(ballBox))
                 {
                     if (Ball.getPosition().y + ballSize * 2 >= Paddle.getPosition().y) {
+                        double random_number = dis(gen);
+                       
+                        double b = 0.5f - random_number;
+                        if (b < 0.0f) 
+                        {
+                            b -= 1.0f;
+                        }
+                        else 
+                        {
+                            b += 1.0f;
+                        }
+                        std::cout << b << std::endl;
                         // Move the ball just above the paddle to avoid hovering
                         PaddleSound.setBuffer(PaddleHit);
                         PaddleSound.play();
-                        Ball.setPosition(Ball.getPosition().x, Paddle.getPosition().y - ballSize * 2);
+                        speed.x += b;
                         speed.y *= -1.0f; // Reverse y-speed
                         Ball.setFillColor(Paddle.getFillColor());
                         Ball.setFillColor(eleStorage[eleSwitcher]);
@@ -492,13 +507,15 @@ int main()
                         {
                             BrickSound.setBuffer(AnemoBrick);
                             BrickSound.play();
-                            if (Ball.getFillColor() == Electro)
-                            {
-                                electroSpeedEnhanced = true;
-                                electroSpeed = true; // Activate electro speed
-                                speed.x *= 2.0f;     // Double the speed
-                                speed.y *= 2.0f;     // Double the speed
-                                gameClock.restart();  // Restart the game clock to track this effect duration
+                            if (electroSpeed == false) {
+                                if (Ball.getFillColor() == Electro)
+                                {
+                                    electroSpeedEnhanced = true;
+                                    electroSpeed = true; // Activate electro speed
+                                    speed.x *= 2.0f;     // Double the speed
+                                    speed.y *= 2.0f;     // Double the speed
+                                    gameClock.restart();  // Restart the game clock to track this effect duration
+                                }
                             }
                             if (Ball.getFillColor() == Pyro)
                             {

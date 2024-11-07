@@ -8,3 +8,6 @@ Known bugs :
 - Paddle physics sometimes bug out and send the ball into the void
 - Right clicking to send the ball flying will sometimes send the ball into the void (Based off of the previous bug)
   
+Notes : 
+- Main : Le code le plus avance fonctionnel (no encapsulation)
+- TahEncapV2 : Le code le plus avance en encapsulation (pas fonctionnel)

@@ -1,9 +1,9 @@
 ﻿  Genshin Bricks.cpp
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(89,71): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(89,57): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(115,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(116,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(395,46): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Genshin Bricks.vcxproj -> C:\Users\moshi\Documents\GitHub\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
-  'pwsh.exe' is not recognized as an internal or external command,
-  operable program or batch file.
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,71): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(96,57): warning C4244: 'argument' : conversion de 'float' en 'unsigned int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(122,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(123,18): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\Genshin Bricks.cpp(403,46): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+  Genshin Bricks.vcxproj -> C:\Users\mtaha\Documents\Genshin-Bricks\Genshin Bricks\x64\Debug\Genshin Bricks.exe
+  'pwsh.exe' n'est pas reconnu en tant que commande interne
+  ou externe, un programme exécutable ou un fichier de commandes.

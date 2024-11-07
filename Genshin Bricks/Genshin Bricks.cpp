@@ -68,6 +68,14 @@ sf::Texture Brick::anemoTexture;
 sf::Texture Brick::electroTexture;
 sf::Texture Brick::pyroTexture;
 
+bool checkWinCondition(const vector<Brick>& bricks) {
+    for (const auto& brick : bricks) {
+        if (brick.is_visible) {
+            return false; // At least one brick is still visible, so the game is not won
+        }
+    }
+    return true; // All bricks are invisible, the player has won
+}
 
 int getBrickIndex(int row, int col, int rows, int cols) {
     if (row < 0 || row >= rows || col < 0 || col >= cols) return -1; // Hors limites
@@ -150,11 +158,11 @@ int main()
         float paddingy = 40.f;
 
         vector<string> layout = {
-            "aeaeappe",
-            "apaeepaa",
-            "epapeeep",
-            "pppaeeee",
-            "eappaepe"
+            "--------",
+            "a-e-e-p-",
+            "--------",
+            "a-e-e-p-",
+            "--------"
         };
         int rows = layout.size();
         int cols = layout[0].size();
@@ -182,8 +190,6 @@ int main()
                 if (brickType == '-') continue;
                 Vector2 position((brickWidth + paddingx) * col + 20, (brickHeight + paddingy) * row);
                 Brick brick;
-                sf::Color element = (row % 2 == 0) ? Electro : Anemo;
-                brick.init(element, position, Vector2(brickWidth, brickHeight));
                 switch (brickType) {
                 case 'a': brick.init(Anemo, position, Vector2(brickWidth, brickHeight)); break;
                 case 'e': brick.init(Electro, position, Vector2(brickWidth, brickHeight)); break;
@@ -207,8 +213,6 @@ int main()
         bool electroSpeed = false;
         bool electroSpeedEnhanced = false;
         bool ballVisible = true;
-        bool winCon = false;
-        bool brickVisible = true;
         int lives(3);
         int bricksPerRow = 8;
         Ball.setFillColor(Anemo);
@@ -291,10 +295,8 @@ int main()
                             speed = Vector2(500.0f, 500.0f);
                             lives = 3;
                             ballVisible = true;
-                            brickVisible = true;
                             electroSpeed = false;
                             electroSpeedEnhanced = false;
-                            winCon = false;
                             gameState = Running;
                             ballState = Reposition;
                             break;
@@ -305,10 +307,8 @@ int main()
                             speed = Vector2(500.0f, 500.0f);
                             lives = 3;
                             ballVisible = true;
-                            brickVisible = true; // Make sure brick is visible again
                             electroSpeed = false;
                             electroSpeedEnhanced = false;
-                            winCon = false;
                             gameState = Running;
                             ballState = Reposition;
                             break;
@@ -373,7 +373,11 @@ int main()
                     VoiceActing.play();
                     gameState = GameOver;
                 }
-
+                if (checkWinCondition(bricks)) {
+                    VoiceActing.setBuffer(GameWinLine);
+                    VoiceActing.play();
+                    gameState = GameWin; // Transition to GameWin state if all bricks are invisible
+                }
 
 
                 // Déplacer la raquette en fonction de la souris
@@ -388,20 +392,21 @@ int main()
                     // Check how much time has passed since electroSpeed was activated
                     electroDuration = gameClock.getElapsedTime();
 
-                    // Check if the duration has exceeded 3 seconds
+                    // Check if the duration has exceeded 2 seconds
                     if (electroDuration.asSeconds() >= 2) {
-                        if (electroSpeedEnhanced == 1) {
-                            electroSpeed = false; // Reset the speed flag
-                            speed.x /= 1.5f;      // Reset speed to normal
-                            speed.y /= 1.5f;      // Reset speed to normal
+                        // Reset the speed only once after the timer expires
+                        if (electroSpeedEnhanced) {
+                            speed.x /= 2.0f;
+                            speed.y /= 2.0f;
                         }
                         else {
-                            electroSpeed = false; // Reset the speed flag
-                            speed.x /= 1.25f;      // Reset speed to normal
-                            electroSpeed = false;
-                            speed.x /= 1.25f;
-                            speed.y /= 1.25f;
+                            speed.x /= 1.5f;
+                            speed.y /= 1.5f;
                         }
+
+                        // Reset the Electro effect flags
+                        electroSpeed = false;
+                        electroSpeedEnhanced = false;
                     }
                 }
                 if (paddleBox.intersects(ballBox))
@@ -561,8 +566,6 @@ int main()
 
             case GameWin:
                 // Display "Let the wind guide you!" only in GameWin state
-                VoiceActing.setBuffer(GameWinLine);
-                VoiceActing.play();
                 text.setFont(font);
                 text.setString("Let the wind guide you!");
                 text.setCharacterSize(20);
